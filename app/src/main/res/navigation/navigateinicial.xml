@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigateinicial"
+    app:startDestination="@id/mainActivity">
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.ifsc.tds.mymed.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/paginaInicial"
+        android:name="com.ifsc.tds.mymed.PaginaInicial"
+        android:label="fragment_pagina_inicial"
+        tools:layout="@layout/fragment_pagina_inicial" />
+    <fragment
+        android:id="@+id/cadastro"
+        android:name="com.ifsc.tds.mymed.Cadastro"
+        android:label="fragment_cadastro"
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_cadastro_to_paginaInicial"
+            app:destination="@id/paginaInicial" />
+    </fragment>
+</navigation>
