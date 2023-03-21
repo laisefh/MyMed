@@ -6,5 +6,6 @@
     <string name="medstring">Med</string>
     <string name="Email">Email:</string>
     <string name="senha">Senha:</string>
-    <string name="nome">*Nome</string>
+    <string name="nome">*Nome:</string>
+    <string name="dataNascimento">Data de Nascimento:</string>
 </resources>
