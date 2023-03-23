@@ -63,12 +63,55 @@
         android:visibility="visible" />
 
     <TextView
+        android:id="@+id/txtViewNovoEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:paddingStart="30sp"
+        android:text="@string/Email"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextCadastroEmail"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:hint="Seuemail@gmail.com"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtViewCadastroSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:paddingStart="30sp"
+        android:text="@string/senha"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextCadastroSenha"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:hint=" SuaSenha"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <TextView
         android:id="@+id/txtViewNascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_medium"
         android:paddingStart="30sp"
-        android:paddingTop="30sp"
         android:text="@string/dataNascimento"
         android:textColor="@color/azulmy"
         android:textSize="28sp" />
@@ -181,11 +224,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="@color/laranjamed"
         android:fontFamily="@font/inter_bold"
-        android:insetTop="120dp"
+        android:insetTop="50dp"
         android:text="CADASTRAR"
-        android:textSize="20sp"
-        android:backgroundTint="@color/laranjamed"/>
+        android:textSize="20sp" />
 
 
 </LinearLayout>

@@ -65,11 +65,11 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@drawable/borda"
                 android:ems="10"
                 android:fontFamily="@font/inter_medium"
-                android:hint="seuemail@gmail.com"
-                android:inputType="textEmailAddress"/>
+                android:hint=" Seuemail@gmail.com"
+                android:inputType="textEmailAddress" />
         </TableRow>
 
         <TableRow
@@ -90,8 +90,8 @@
                 android:id="@+id/editTextTextPassword2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
                 android:ems="10"
+                android:background="@drawable/borda"
                 android:fontFamily="@font/inter_medium"
                 android:hint=" SuaSenha"
                 android:inputType="textPassword" />
