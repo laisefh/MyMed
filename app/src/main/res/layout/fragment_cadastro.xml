@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_bold"
         android:paddingStart="55sp"
-        android:paddingTop="90sp"
+        android:paddingTop="60sp"
         android:text="@string/mystring"
         android:textColor="@color/azulmy"
         android:textSize="75sp" />
@@ -30,14 +30,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
-            android:paddingLeft="120sp"
+            android:paddingLeft="100sp"
             android:text="@string/medstring"
             android:textColor="@color/laranjamed"
             android:textSize="75sp" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="124dp"
+            android:layout_width="93dp"
             android:layout_height="79dp"
             android:src="@drawable/coracao" />
     </LinearLayout>
@@ -90,8 +90,8 @@
                 android:id="@+id/editTextTextPassword2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:background="@drawable/borda"
+                android:ems="10"
                 android:fontFamily="@font/inter_medium"
                 android:hint=" SuaSenha"
                 android:inputType="textPassword" />
@@ -129,4 +129,3 @@
         android:text="Cadastre-se" />
 
 </LinearLayout>
-    <?xml version="1.0" encoding="utf-8"?>
