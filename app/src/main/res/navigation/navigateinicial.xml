@@ -6,16 +6,16 @@
     app:startDestination="@id/cadastro">
     <fragment
         android:id="@+id/paginaInicial"
-        android:name="com.ifsc.tds.mymed.PaginaInicial"
+        android:name="com.ifsc.tds.mymed.Cadastro"
         android:label="fragment_pagina_inicial"
-        tools:layout="@layout/fragment_pagina_inicial" />
+        tools:layout="@layout/fragment_cadastro" />
     <fragment
         android:id="@+id/cadastro"
-        android:name="com.ifsc.tds.mymed.Cadastro"
+        android:name="com.ifsc.tds.mymed.Login"
         android:label="fragment_cadastro"
-        tools:layout="@layout/fragment_cadastro" >
+        tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_cadastro_to_paginaInicial"
+            android:id="@+id/action_login_to_cadastro"
             app:destination="@id/paginaInicial" />
     </fragment>
 </navigation>

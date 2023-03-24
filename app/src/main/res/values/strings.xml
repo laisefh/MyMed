@@ -8,4 +8,9 @@
     <string name="senha">Senha:</string>
     <string name="nome">Nome:</string>
     <string name="dataNascimento">Data de Nascimento:</string>
+    <string name="emailLabelTextView">Email:</string>
+    <string name="emailHintEditText">Seuemail@gmail.com</string>
+    <string name="cadastrarButtonText">Cadastre-se</string>
+    <string name="cadastrarButtonText2">Cadastrar</string>
+    <string name="loginButtonText">Login</string>
 </resources>

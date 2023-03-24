@@ -1,6 +1,5 @@
 package com.ifsc.tds.mymed;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,9 +24,8 @@ public class Cadastro extends Fragment {
     private String mParam1;
     private String mParam2;
 
-
-
     public Cadastro() {
+        // Required empty public constructor
     }
 
     /**
@@ -37,7 +34,7 @@ public class Cadastro extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Cadastro.
+     * @return A new instance of fragment PaginaInicial.
      */
     // TODO: Rename and change types and number of parameters
     public static Cadastro newInstance(String param1, String param2) {
@@ -64,5 +61,4 @@ public class Cadastro extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cadastro, container, false);
     }
-
 }

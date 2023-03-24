@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/caramelo"
+    android:orientation="vertical"
+    tools:context=".Login" >
+
+    <TextView
+        android:id="@+id/txtViewMyInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:paddingStart="32sp"
+        android:paddingTop="8dp"
+        android:text="@string/mystring"
+        android:textColor="@color/azulmy"
+        android:textSize="75sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txtViewMedInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:paddingStart="100sp"
+            android:text="@string/medstring"
+            android:textColor="@color/laranjamed"
+            android:textSize="75sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:contentDescription="Colocar descrição"
+            android:src="@drawable/coracao" />
+    </LinearLayout>
+
+
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:useDefaultMargins="true"
+        android:padding="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:columnCount="2">
+
+            <TextView
+                android:id="@+id/txtViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="end|center_vertical"
+                android:text="@string/emailLabelTextView"
+                android:textColor="@color/azulmy"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:background="@drawable/borda"
+                android:ems="10"
+                android:fontFamily="@font/inter_medium"
+                android:hint="@string/emailHintEditText"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/txtViewSEnha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="end|center_vertical"
+                android:fontFamily="@font/inter_medium"
+                android:text="Senha: "
+                android:textColor="@color/azulmy"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:background="@drawable/borda"
+                android:ems="10"
+                android:fontFamily="@font/inter_medium"
+                android:hint=" SuaSenha"
+                android:inputType="textPassword" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/botaoLogar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:text="@string/loginButtonText"
+        android:backgroundTint="@color/laranjamed"/>
+
+    <TextView
+        android:id="@+id/txtViewnConta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Não tem conta?"
+        android:textColor="@color/azulmy"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/botaoCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/azulmy"
+        android:text="@string/cadastrarButtonText" />
+
+</LinearLayout>
