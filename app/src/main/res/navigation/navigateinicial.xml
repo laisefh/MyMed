@@ -3,19 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigateinicial"
-    app:startDestination="@id/cadastro">
+    app:startDestination="@id/login">
     <fragment
-        android:id="@+id/paginaInicial"
+        android:id="@+id/cadastro"
         android:name="com.ifsc.tds.mymed.Cadastro"
         android:label="fragment_pagina_inicial"
         tools:layout="@layout/fragment_cadastro" />
     <fragment
-        android:id="@+id/cadastro"
+        android:id="@+id/login"
         android:name="com.ifsc.tds.mymed.Login"
         android:label="fragment_cadastro"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_to_cadastro"
-            app:destination="@id/paginaInicial" />
+            app:destination="@id/cadastro" />
+        <action
+            android:id="@+id/action_login_to_hometest"
+            app:destination="@id/hometest" />
     </fragment>
+    <fragment
+        android:id="@+id/hometest"
+        android:name="com.ifsc.tds.mymed.HomeFragmentTest"
+        android:label="fragment_home_test"
+        tools:layout="@layout/fragment_home_test" >
+    </fragment>
+
 </navigation>
