@@ -17,14 +17,6 @@
         android:backgroundTint="@color/caramelo"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:background="@color/azulmy"
-            android:src="@android:drawable/ic_menu_revert" />
-
         <TextView
             android:id="@+id/txtViewCadastro"
             android:layout_width="288dp"
@@ -79,7 +71,7 @@
         android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
-        android:hint="Seuemail@gmail.com"
+        android:hint=" Seuemail@gmail.com"
         android:inputType="textPersonName"
         android:visibility="visible" />
 
@@ -198,6 +190,7 @@
                 android:fontFamily="@font/inter_medium"
                 android:text="Declaro que li e aceito os "
                 android:textColor="@color/laranjamed"
+                android:buttonTint="@color/azulmy"
                 android:textSize="16sp" />
 
         </RadioGroup>
