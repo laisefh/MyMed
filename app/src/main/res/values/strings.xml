@@ -13,4 +13,5 @@
     <string name="cadastrarButtonText">Cadastre-se</string>
     <string name="cadastrarButtonText2">Cadastrar</string>
     <string name="loginButtonText">Login</string>
+    <string name="anotacoes">Anotações:</string>
 </resources>

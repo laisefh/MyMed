@@ -11,4 +11,6 @@
     <color name="azulmy">#003F5A</color>
     <color name="laranjamed">#DD6600</color>
     <color name="transparente">#00F44336</color>
+    <color name="laranjatransparente">#A3DD6600</color>
+    <color name="begefundo">#FAF7F3</color>
 </resources>
