@@ -14,4 +14,6 @@
     <string name="cadastrarButtonText2">Cadastrar</string>
     <string name="loginButtonText">Login</string>
     <string name="anotacoes">Anotações:</string>
+    <string name="tocEditar">Toque para editar</string>
+    <string name="addNovoRemedio">Adicione um novo remédio:</string>
 </resources>

@@ -53,10 +53,12 @@
 
             <Button
                 android:id="@+id/buttonEditarRemedio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="145dp"
+                android:layout_height="71dp"
+                android:backgroundTint="@color/laranjamed"
                 android:fontFamily="@font/inter_medium"
-                android:text="Button"
+                android:text="@string/tocEditar"
+                android:textColor="@color/azulmy"
                 tools:layout_editor_absoluteX="222dp"
                 tools:layout_editor_absoluteY="19dp" />
 
@@ -68,8 +70,8 @@
                 android:text="anotacoes"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                tools:layout_editor_absoluteX="6dp"
-                tools:layout_editor_absoluteY="94dp" />
+                tools:layout_editor_absoluteX="7dp"
+                tools:layout_editor_absoluteY="90dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout >
