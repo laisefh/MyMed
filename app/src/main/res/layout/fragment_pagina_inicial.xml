@@ -37,6 +37,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal"
+            android:paddingTop="250dp">
+
+                <ImageButton
+                    android:id="@+id/btnAnotacoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/caderno" />
+
+                <ImageButton
+                    android:id="@+id/btnAdicionar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/add" />
+
+                <ImageButton
+                    android:id="@+id/btnHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/casa" />
+
+                <ImageButton
+                    android:id="@+id/btnConfiguracoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/settings" />
+
+                <ImageButton
+                    android:id="@+id/btnContrato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/contrato"/>
+
+        </LinearLayout>
 
 </LinearLayout>
