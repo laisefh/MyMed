@@ -16,4 +16,12 @@
     <string name="anotacoes">Anotações:</string>
     <string name="tocEditar">Toque para editar</string>
     <string name="addNovoRemedio">Adicione um novo remédio:</string>
+    <string name="nome_Remedio">Nome do Remédio:</string>
+    <string name="hint_Nome"> Nome do Remédio</string>
+    <string name="horario_Remedio">Horário Inicial:</string>
+    <string name="frequencia">Frequência:</string>
+    <string name="diario">Diariamente</string>
+    <string name="diasSemana">Escolher dias da Semana</string>
+    <string name="intervaloHoras">Escolher Intervalo de Horas</string>
+    <string name="anotacoes_op">Anotações (Opicionais)</string>
 </resources>

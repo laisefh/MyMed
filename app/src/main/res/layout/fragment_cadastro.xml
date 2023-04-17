@@ -49,6 +49,7 @@
         android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:hint=" Nome Completo"
         android:inputType="textPersonName"
         android:visibility="visible" />
@@ -71,6 +72,7 @@
         android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:hint=" Seuemail@gmail.com"
         android:inputType="textPersonName"
         android:visibility="visible" />
@@ -93,6 +95,7 @@
         android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
+        android:fontFamily="@font/inter"
         android:hint=" SuaSenha"
         android:inputType="textPersonName"
         android:visibility="visible" />
@@ -120,6 +123,7 @@
             android:layout_weight="1"
             android:background="@drawable/borda"
             android:ems="10"
+            android:fontFamily="@font/inter"
             android:gravity="center"
             android:hint=" 00"
             android:inputType="textPersonName"
@@ -142,6 +146,7 @@
             android:layout_weight="1"
             android:background="@drawable/borda"
             android:ems="10"
+            android:fontFamily="@font/inter"
             android:gravity="center"
             android:hint="00"
             android:inputType="textPersonName"
@@ -166,6 +171,7 @@
             android:layout_weight="1"
             android:background="@drawable/borda"
             android:ems="10"
+            android:fontFamily="@font/inter"
             android:gravity="center"
             android:hint="0000"
             android:inputType="textPersonName"

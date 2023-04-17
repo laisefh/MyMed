@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/azulmy"
+    android:orientation="vertical"
+    tools:context=".addRemedio">
+
+    <TextView
+        android:id="@+id/txtAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/nome_Remedio"
+        android:textColor="@color/azulmy"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextRemedio"
+        android:layout_width="333dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:hint="@string/hint_Nome"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtHorario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/horario_Remedio"
+        android:textColor="@color/azulmy"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextHorario"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:background="@drawable/borda"
+        android:digits="0123456789"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="time" />
+
+    <TextView
+        android:id="@+id/txtViewFrequencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/frequencia"
+        android:textColor="@color/azulmy"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/laranjatransparente">
+
+
+        <RadioButton
+            android:id="@+id/rdbtnDiario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/diario"
+            android:textColor="@color/azulmy" />
+
+        <RadioButton
+            android:id="@+id/rdbtnDias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/diasSemana"
+            android:textColor="@color/azulmy" />
+
+        <RadioButton
+            android:id="@+id/rdbtnHoras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/intervaloHoras"
+            android:textColor="@color/azulmy" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtAnotacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:paddingStart="20dp"
+        android:text="@string/anotacoes_op"
+        android:textColor="@color/azulmy"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTxtAnotacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:maxLines="5"
+        android:minLines="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="Button" />
+    </LinearLayout>
+
+</LinearLayout>
