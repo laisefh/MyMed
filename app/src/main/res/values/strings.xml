@@ -24,4 +24,7 @@
     <string name="diasSemana">Escolher dias da Semana</string>
     <string name="intervaloHoras">Escolher Intervalo de Horas</string>
     <string name="anotacoes_op">Anotações (Opicionais)</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="config">Configurações</string>
 </resources>
