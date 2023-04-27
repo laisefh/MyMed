@@ -109,15 +109,16 @@
                 android:inputType="textPassword" />
     </GridLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoLogar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="8dp"
+        android:background="@drawable/btnlaranja"
+        android:textColor="@color/white"
         android:layout_gravity="center"
-        android:text="@string/loginButtonText"
-        android:backgroundTint="@color/laranjamed"/>
+        android:text="@string/loginButtonText"/>
 
     <TextView
         android:id="@+id/txtViewnConta"
@@ -130,14 +131,15 @@
         android:textColor="@color/azulmy"
         android:textSize="20sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="8dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/azulmy"
+        android:background="@drawable/btnazul"
+        android:textColor="@color/white"
         android:text="@string/cadastrarButtonText" />
 
 </LinearLayout>

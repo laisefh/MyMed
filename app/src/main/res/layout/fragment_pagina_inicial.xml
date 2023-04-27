@@ -16,13 +16,13 @@
             android:textColor="@color/azulmy"
             android:textSize="18sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAdd"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/laranjamed"
             android:text="+"
+            android:background="@drawable/btnlaranja"
             android:textColor="@color/white"
             android:textSize="65sp"
             android:textStyle="bold" />
@@ -37,8 +37,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="250dp">
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/btnAnotacoes"
@@ -73,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/contrato"/>
+                    android:src="@drawable/contrato" />
 
         </LinearLayout>
 

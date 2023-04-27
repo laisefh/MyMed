@@ -193,10 +193,10 @@
                 android:id="@+id/radioBtnTermos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/azulmy"
                 android:fontFamily="@font/inter"
                 android:text="Declaro que li e aceito os "
                 android:textColor="@color/laranjamed"
-                android:buttonTint="@color/azulmy"
                 android:textSize="16sp" />
 
         </RadioGroup>
@@ -217,13 +217,15 @@
             app:strokeColor="#00FFFFFF" />
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdicionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="@color/laranjamed"
+        android:background="@drawable/btnlaranja"
         android:fontFamily="@font/inter_bold"
+        android:padding="5dp"
         android:text="@string/cadastrarButtonText2"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 </LinearLayout>
