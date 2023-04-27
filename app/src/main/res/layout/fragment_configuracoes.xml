@@ -182,6 +182,5 @@
         android:text="@string/salvar"
         android:textColor="@color/white"
         android:textSize="24sp" />
-</LinearLayout>
 
 </LinearLayout>
