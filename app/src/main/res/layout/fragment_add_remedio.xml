@@ -148,7 +148,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="30dp">
 
         <ImageButton
             android:id="@+id/btnAddRemedioAnotacoes"
