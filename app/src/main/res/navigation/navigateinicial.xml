@@ -8,7 +8,11 @@
         android:id="@+id/paginaInicial"
         android:name="com.ifsc.tds.mymed.Cadastro"
         android:label="fragment_pagina_inicial"
-        tools:layout="@layout/fragment_cadastro" />
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_paginaInicial_to_paginaInicial2"
+            app:destination="@id/paginaInicial2" />
+    </fragment>
     <fragment
         android:id="@+id/cadastro"
         android:name="com.ifsc.tds.mymed.Login"
@@ -18,4 +22,42 @@
             android:id="@+id/action_login_to_cadastro"
             app:destination="@id/paginaInicial" />
     </fragment>
+    <fragment
+        android:id="@+id/termosDeUso"
+        android:name="com.ifsc.tds.mymed.termosDeUso"
+        android:label="fragment_termos_de_uso"
+        tools:layout="@layout/fragment_termos_de_uso" />
+    <fragment
+        android:id="@+id/relato"
+        android:name="com.ifsc.tds.mymed.relato"
+        android:label="fragment_relato"
+        tools:layout="@layout/fragment_relato" />
+    <fragment
+        android:id="@+id/paginaInicial2"
+        android:name="com.ifsc.tds.mymed.paginaInicial"
+        android:label="fragment_pagina_inicial"
+        tools:layout="@layout/fragment_pagina_inicial" >
+        <action
+            android:id="@+id/action_paginaInicial2_to_addRemedio"
+            app:destination="@id/addRemedio" />
+        <action
+            android:id="@+id/action_paginaInicial2_to_relato"
+            app:destination="@id/relato" />
+        <action
+            android:id="@+id/action_paginaInicial2_to_termosDeUso"
+            app:destination="@id/termosDeUso" />
+        <action
+            android:id="@+id/action_paginaInicial2_to_configuracoes"
+            app:destination="@id/configuracoes" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRemedio"
+        android:name="com.ifsc.tds.mymed.addRemedio"
+        android:label="fragment_add_remedio"
+        tools:layout="@layout/fragment_add_remedio" />
+    <fragment
+        android:id="@+id/configuracoes"
+        android:name="com.ifsc.tds.mymed.configuracoes"
+        android:label="fragment_configuracoes"
+        tools:layout="@layout/fragment_configuracoes" />
 </navigation>

@@ -28,4 +28,7 @@
     <string name="salvar">Salvar</string>
     <string name="config">Configurações</string>
     <string name="relato">Relato</string>
+    <string name="tesmosDeUso">Termos de Uso</string>
+    <string name="termos">  O aplicativo MyMed e seus desenvolvedores não se responsabilizam por mal uso da medicação, devido a informações preenchidas de maneira incorreta, esquecimentos e excesso de medicação. O aplicativo busca ser um lembrete apenas para auxiliar no consumo de medicações no dia a dia.
+        Atenciosamente, Equipe MyMed.</string>
 </resources>
