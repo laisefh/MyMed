@@ -30,4 +30,158 @@
             android:textColor="@color/azulmy"
             android:textSize="24sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtViewConfigNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingStart="32sp"
+        android:paddingTop="5sp"
+        android:text="@string/nome"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextNomeCompleto"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtViewNascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingStart="30sp"
+        android:text="@string/dataNascimento"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextConfigDia"
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30sp"
+            android:layout_weight="1"
+            android:background="@drawable/borda"
+            android:ems="10"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtConfigBarra"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="/"
+            android:textColor="@color/azulmy"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/editTextConfigMes"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/borda"
+            android:ems="10"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textColor="@color/azulmy"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewConfigBarra2"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="/"
+            android:textColor="@color/azulmy"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/editTextConfigAno"
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="95sp"
+            android:layout_weight="1"
+            android:background="@drawable/borda"
+            android:ems="10"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtViewConfigEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingStart="30sp"
+        android:text="@string/Email"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextConfigEmail"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtViewConfigSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingStart="30sp"
+        android:text="@string/senha"
+        android:textColor="@color/azulmy"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextConfigSenha"
+        android:layout_width="339dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-10sp"
+        android:background="@drawable/borda"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfigSalvar"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btnlaranja"
+        android:text="@string/salvar"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</LinearLayout>
+
 </LinearLayout>
