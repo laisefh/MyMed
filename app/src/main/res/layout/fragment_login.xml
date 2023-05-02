@@ -46,67 +46,63 @@
     </LinearLayout>
 
 
-
-
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:useDefaultMargins="true"
+        android:columnCount="2"
         android:padding="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:columnCount="2">
+        android:useDefaultMargins="true">
 
-            <TextView
-                android:id="@+id/txtViewEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="end|center_vertical"
-                android:text="@string/emailLabelTextView"
-                android:textColor="@color/azulmy"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="end|center_vertical"
+            android:fontFamily="@font/inter"
+            android:text="@string/emailLabelTextView"
+            android:textColor="@color/azulmy"
+            android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:background="@drawable/borda"
-                android:ems="10"
-                android:fontFamily="@font/inter"
-                android:hint="@string/emailHintEditText"
-                android:inputType="textEmailAddress" />
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/borda"
+            android:ems="10"
+            android:fontFamily="@font/inter"
+            android:hint="@string/emailHintEditText"
+            android:inputType="textEmailAddress"
+            android:padding="8dp" />
 
-            <TextView
-                android:id="@+id/txtViewSEnha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_gravity="end|center_vertical"
-                android:fontFamily="@font/inter"
-                android:text="Senha: "
-                android:textColor="@color/azulmy"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtViewSEnha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="end|center_vertical"
+            android:fontFamily="@font/inter"
+            android:text="Senha: "
+            android:textColor="@color/azulmy"
+            android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/editTextTextPassword2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:layout_row="1"
-                android:layout_column="1"
-                android:background="@drawable/borda"
-                android:ems="10"
-                android:fontFamily="@font/inter"
-                android:hint=" SuaSenha"
-                android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@drawable/borda"
+            android:ems="10"
+            android:fontFamily="@font/inter"
+            android:hint=" SuaSenha"
+            android:inputType="textPassword"
+            android:padding="8dp" />
     </GridLayout>
 
     <androidx.appcompat.widget.AppCompatButton
