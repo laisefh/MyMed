@@ -63,7 +63,11 @@ public class Cadastro extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
+        //botoes
         Button btnAdd = view.findViewById(R.id.btnAdicionar);
+        Button btnTermos = view.findViewById(R.id.btnTermos);
+        //Listener dos botoes
+        btnTermos.setOnClickListener(view1 -> verTermos());
         btnAdd.setOnClickListener(view1 -> terminarCadastro());
         return view;
     }
@@ -71,5 +75,9 @@ public class Cadastro extends Fragment {
         NavController nav = Navigation.findNavController(getView());
           nav.navigate(R.id.action_paginaInicial_to_paginaInicial2);
          }
+    void verTermos(){
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial_to_termosDeUso);
+    }
 
 }

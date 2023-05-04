@@ -3,10 +3,13 @@ package com.ifsc.tds.mymed;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,14 @@ public class itemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item, container, false);
+        View view = inflater.inflate(R.layout.fragment_item, container, false);
+        Button btnEditar = view.findViewById(R.id.buttonEditarRemedio);
+        btnEditar.setOnClickListener(view1 -> editarMed());
+        return view;
     }
+    void editarMed(){
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_itemFragment_to_addRemedio);
+    }
+
 }

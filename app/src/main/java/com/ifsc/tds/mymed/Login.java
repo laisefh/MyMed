@@ -21,9 +21,15 @@ public class Login extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_login, container, false);
-        Button loginButton = view.findViewById(R.id.botaoCadastrar);
-        loginButton.setOnClickListener(view1 -> fazerCadastro());
+        Button cadButton = view.findViewById(R.id.botaoCadastrar);
+        Button loginButton = view.findViewById(R.id.botaoLogar);
+        loginButton.setOnClickListener(view1 -> fazerLogin());
+        cadButton.setOnClickListener(view1 -> fazerCadastro());
         return view;
+    }
+    void fazerLogin(){
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_cadastro_to_paginaInicial2);
     }
 
     void fazerCadastro(){

@@ -41,50 +41,5 @@
         android:textColor="@color/azulmy"
         android:textSize="24sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btntermosAnotacoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/caderno" />
-
-        <ImageButton
-            android:id="@+id/btnTermosAdicionar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/add" />
-
-        <ImageButton
-            android:id="@+id/btnTermosHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/casa" />
-
-        <ImageButton
-            android:id="@+id/btnTermosConfiguracoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/settings" />
-
-        <ImageButton
-            android:id="@+id/btnTermosContrato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/contrato" />
-
-    </LinearLayout>
 
 </LinearLayout>

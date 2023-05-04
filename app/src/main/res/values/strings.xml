@@ -15,9 +15,9 @@
     <string name="loginButtonText">Login</string>
     <string name="anotacoes">Anotações:</string>
     <string name="tocEditar">Toque para editar</string>
-    <string name="addNovoRemedio">Adicione um novo remédio:</string>
-    <string name="nome_Remedio">Nome do Remédio:</string>
-    <string name="hint_Nome"> Nome do Remédio</string>
+    <string name="addNovoRemedio">Adicione uma nova Medicação:</string>
+    <string name="nome_Remedio">Nome da Medicação:</string>
+    <string name="hint_Nome"> Nome da Medicação</string>
     <string name="horario_Remedio">Horário Inicial:</string>
     <string name="frequencia">Frequência:</string>
     <string name="diario">Diariamente</string>

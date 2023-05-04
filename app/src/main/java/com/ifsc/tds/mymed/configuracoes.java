@@ -3,10 +3,14 @@ package com.ifsc.tds.mymed;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +63,45 @@ public class configuracoes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_configuracoes, container, false);
+        View view = inflater.inflate(R.layout.fragment_configuracoes, container, false);
+        //botoes
+        Button btnSalvar = view.findViewById(R.id.btnConfigSalvar);
+        ImageButton btnAnotacoes = view.findViewById(R.id.btnConfigAnotacoes);
+        ImageButton btnAdd = view.findViewById(R.id.btnConfigAdicionar);
+        ImageButton btnHome = view.findViewById(R.id.btnConfigHome);
+        ImageButton btnTermo = view.findViewById(R.id.btnConfigContrato);
+        //On listener dos botôes
+        btnSalvar.setOnClickListener(view1 -> salvar());
+        btnAnotacoes.setOnClickListener(view1 -> verAnotacoes());
+        btnHome.setOnClickListener(view1 -> irParaHome());
+        btnAdd.setOnClickListener(view1 -> addMed());
+        btnTermo.setOnClickListener(view1 -> verTermos());
+
+        return view;
     }
+    void salvar() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_configuracoes_to_paginaInicial2);
+    }
+
+    void irParaHome() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_configuracoes_to_paginaInicial2);
+    }
+
+    void verAnotacoes() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_configuracoes_to_relato);
+    }
+
+    void addMed() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_configuracoes_to_addRemedio);
+    }
+
+    void verTermos() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_configuracoes_to_termosDeUso);
+    }
+
 }

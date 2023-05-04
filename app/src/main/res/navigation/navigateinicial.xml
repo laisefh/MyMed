@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_paginaInicial_to_paginaInicial2"
             app:destination="@id/paginaInicial2" />
+        <action
+            android:id="@+id/action_paginaInicial_to_termosDeUso"
+            app:destination="@id/termosDeUso" />
     </fragment>
     <fragment
         android:id="@+id/cadastro"
@@ -21,6 +24,9 @@
         <action
             android:id="@+id/action_login_to_cadastro"
             app:destination="@id/paginaInicial" />
+        <action
+            android:id="@+id/action_cadastro_to_paginaInicial2"
+            app:destination="@id/paginaInicial2" />
     </fragment>
     <fragment
         android:id="@+id/termosDeUso"
@@ -31,7 +37,20 @@
         android:id="@+id/relato"
         android:name="com.ifsc.tds.mymed.relato"
         android:label="fragment_relato"
-        tools:layout="@layout/fragment_relato" />
+        tools:layout="@layout/fragment_relato" >
+        <action
+            android:id="@+id/action_relato_to_addRemedio"
+            app:destination="@id/addRemedio" />
+        <action
+            android:id="@+id/action_relato_to_configuracoes"
+            app:destination="@id/configuracoes" />
+        <action
+            android:id="@+id/action_relato_to_termosDeUso"
+            app:destination="@id/termosDeUso" />
+        <action
+            android:id="@+id/action_relato_to_paginaInicial2"
+            app:destination="@id/paginaInicial2" />
+    </fragment>
     <fragment
         android:id="@+id/paginaInicial2"
         android:name="com.ifsc.tds.mymed.paginaInicial"
@@ -49,15 +68,52 @@
         <action
             android:id="@+id/action_paginaInicial2_to_configuracoes"
             app:destination="@id/configuracoes" />
+        <action
+            android:id="@+id/action_paginaInicial2_to_termosDeUso2"
+            app:destination="@id/termosDeUso" />
     </fragment>
     <fragment
         android:id="@+id/addRemedio"
         android:name="com.ifsc.tds.mymed.addRemedio"
         android:label="fragment_add_remedio"
-        tools:layout="@layout/fragment_add_remedio" />
+        tools:layout="@layout/fragment_add_remedio" >
+        <action
+            android:id="@+id/action_addRemedio_to_relato"
+            app:destination="@id/relato" />
+        <action
+            android:id="@+id/action_addRemedio_to_configuracoes"
+            app:destination="@id/configuracoes" />
+        <action
+            android:id="@+id/action_addRemedio_to_termosDeUso"
+            app:destination="@id/termosDeUso" />
+        <action
+            android:id="@+id/action_addRemedio_to_paginaInicial2"
+            app:destination="@id/paginaInicial2" />
+    </fragment>
     <fragment
         android:id="@+id/configuracoes"
         android:name="com.ifsc.tds.mymed.configuracoes"
         android:label="fragment_configuracoes"
-        tools:layout="@layout/fragment_configuracoes" />
+        tools:layout="@layout/fragment_configuracoes" >
+        <action
+            android:id="@+id/action_configuracoes_to_termosDeUso"
+            app:destination="@id/termosDeUso" />
+        <action
+            android:id="@+id/action_configuracoes_to_addRemedio"
+            app:destination="@id/addRemedio" />
+        <action
+            android:id="@+id/action_configuracoes_to_relato"
+            app:destination="@id/relato" />
+        <action
+            android:id="@+id/action_configuracoes_to_paginaInicial2"
+            app:destination="@id/paginaInicial2" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.ifsc.tds.mymed.itemFragment"
+        android:label="itemFragment" >
+        <action
+            android:id="@+id/action_itemFragment_to_addRemedio"
+            app:destination="@id/addRemedio" />
+    </fragment>
 </navigation>

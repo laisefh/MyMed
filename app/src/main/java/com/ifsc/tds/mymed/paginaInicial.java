@@ -3,10 +3,14 @@ package com.ifsc.tds.mymed;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +63,44 @@ public class paginaInicial extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pagina_inicial, container, false);
+        View view = inflater.inflate(R.layout.fragment_pagina_inicial, container, false);
+        //Botão adicionar Remédio, alterar remédio e barra de tarefas
+        Button btnAdd = view.findViewById(R.id.btnAdd);
+        ImageButton btnAnotacoes = view.findViewById(R.id.btnAnotacoes);
+        ImageButton btnAdd2 = view.findViewById(R.id.btnAdicionar);
+        ImageButton btnConfig = view.findViewById(R.id.btnConfiguracoes);
+        ImageButton btnTermo = view.findViewById(R.id.btnContrato);
+        //Listener nos botoes
+        btnAdd.setOnClickListener(view1 -> adicionarMed());
+        btnAnotacoes.setOnClickListener(view1 -> verAnotacoes());
+        btnAdd2.setOnClickListener(view1 -> adicionarMed2());
+        btnConfig.setOnClickListener(view1 -> irConfiguracoes());
+        btnTermo.setOnClickListener(view1 -> verTermos());
+        return view;
+    }
+
+    void adicionarMed() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial2_to_addRemedio);
+    }
+
+    void adicionarMed2() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial2_to_addRemedio);
+    }
+
+    void verAnotacoes() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial2_to_relato);
+    }
+
+    void irConfiguracoes() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial2_to_configuracoes);
+    }
+
+    void verTermos() {
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial2_to_termosDeUso);
     }
 }
