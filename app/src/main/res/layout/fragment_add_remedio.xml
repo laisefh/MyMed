@@ -46,10 +46,11 @@
         android:layout_height="54dp"
         android:layout_gravity="center"
         android:background="@drawable/borda"
-        android:digits="0123456789"
+        android:digits="0123456789:"
         android:ems="10"
         android:fontFamily="@font/inter"
-        android:inputType="time" />
+        android:inputType="time"
+        android:maxLength="5" />
 
     <TextView
         android:id="@+id/txtViewFrequencia"
@@ -73,6 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
+            android:buttonTint="@color/azulmy"
             android:text="@string/diario"
             android:textColor="@color/azulmy" />
 
@@ -80,6 +82,7 @@
             android:id="@+id/rdbtnDias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/azulmy"
             android:fontFamily="@font/inter_bold"
             android:text="@string/diasSemana"
             android:textColor="@color/azulmy" />
@@ -88,6 +91,7 @@
             android:id="@+id/rdbtnHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/azulmy"
             android:fontFamily="@font/inter_bold"
             android:text="@string/intervaloHoras"
             android:textColor="@color/azulmy" />
@@ -111,10 +115,12 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:gravity="top|left"
+        android:hint="@string/ex_anotacoes"
         android:inputType="textMultiLine"
         android:lines="5"
         android:maxLines="5"
-        android:minLines="2" />
+        android:minLines="2"
+        android:paddingStart="15dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -142,6 +148,7 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

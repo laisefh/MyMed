@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:paddingStart="32sp"
+        android:gravity="center"
         android:paddingTop="30sp"
         android:text="@string/nome"
         android:textColor="@color/azulmy"
@@ -46,7 +46,6 @@
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
-        android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
         android:fontFamily="@font/inter"
@@ -59,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:paddingStart="30sp"
+        android:gravity="center"
         android:text="@string/Email"
         android:textColor="@color/azulmy"
         android:textSize="28sp" />
@@ -69,7 +68,6 @@
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
-        android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
         android:fontFamily="@font/inter"
@@ -82,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:paddingStart="30sp"
+        android:gravity="center"
         android:text="@string/senha"
         android:textColor="@color/azulmy"
         android:textSize="28sp" />
@@ -92,7 +90,6 @@
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
-        android:layout_marginStart="-10sp"
         android:background="@drawable/borda"
         android:ems="10"
         android:fontFamily="@font/inter"
@@ -105,35 +102,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:paddingStart="30sp"
+        android:gravity="center"
         android:text="@string/dataNascimento"
         android:textColor="@color/azulmy"
         android:textSize="28sp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/editTextDia"
-            android:layout_width="81dp"
+            android:layout_width="45dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30sp"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@drawable/borda"
             android:digits="0123456789"
             android:ems="10"
             android:fontFamily="@font/inter"
             android:gravity="center"
-            android:hint=" 00"
-            android:inputType="textPersonName"
+            android:hint="00"
+            android:inputType="number"
             android:maxLength="2"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtBarra"
-            android:layout_width="70dp"
+            android:layout_width="24dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -143,7 +142,7 @@
 
         <EditText
             android:id="@+id/editTextMes"
-            android:layout_width="85dp"
+            android:layout_width="46dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/borda"
@@ -152,14 +151,14 @@
             android:fontFamily="@font/inter"
             android:gravity="center"
             android:hint="00"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:maxLength="2"
             android:textColor="@color/azulmy"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textViewBarra2"
-            android:layout_width="78dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -169,9 +168,9 @@
 
         <EditText
             android:id="@+id/editTextAno"
-            android:layout_width="116dp"
+            android:layout_width="99dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="95sp"
+            android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/borda"
             android:digits="0123456789"
@@ -179,7 +178,7 @@
             android:fontFamily="@font/inter"
             android:gravity="center"
             android:hint="0000"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:maxLength="4"
             android:textSize="20sp" />
     </LinearLayout>
@@ -187,13 +186,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
         android:paddingTop="20dp">
 
         <RadioGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="20sp">
+            android:layout_height="wrap_content">
 
             <RadioButton
                 android:id="@+id/radioBtnTermos"
