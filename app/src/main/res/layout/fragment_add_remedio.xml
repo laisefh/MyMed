@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/azulmy"
     android:orientation="vertical"
-    tools:context=".addRemedio.addRemedio">
+    tools:context=".addRemedio">
 
     <TextView
         android:id="@+id/txtAdd"

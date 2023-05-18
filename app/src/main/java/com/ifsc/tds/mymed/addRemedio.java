@@ -1,4 +1,4 @@
-package com.ifsc.tds.mymed.addRemedio;
+package com.ifsc.tds.mymed;
 
 import android.os.Bundle;
 
@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
-import com.ifsc.tds.mymed.R;
 
 /**
  * A simple {@link Fragment} subclass.
