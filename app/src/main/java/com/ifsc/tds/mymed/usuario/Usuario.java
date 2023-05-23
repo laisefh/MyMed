@@ -8,6 +8,12 @@ public class Usuario {
     String dataNascimento;
     String email;
 
+    public Usuario(String nome, String dataNascimento, String email) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+    }
+
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public Usuario(){}
 
@@ -17,10 +23,6 @@ public class Usuario {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Usuario(String nome, String dataNascimento, String email) {
         this.nome = nome;
     }
 

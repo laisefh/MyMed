@@ -36,11 +36,11 @@ public class LoginFragment extends Fragment {
         mAuthListener = firebaseAuth -> {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
-                Log.d("MyMed", "signed_in");
+                Log.d("MYMED2023", "Usuário logado");
                 goToHome();
             }
             else {
-                Log.d("MyMed", "signed_out");
+                Log.d("MYMED2023", "Usuário signed_out");
                 //fazerAlgumaCoisa
             }
         };

@@ -28,6 +28,7 @@
         android:fontFamily="@font/inter"
         android:hint="@string/hint_Nome"
         android:inputType="textPersonName"
+        android:imeOptions="actionNext"
         android:visibility="visible" />
 
     <TextView
@@ -50,6 +51,7 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:inputType="time"
+        android:imeOptions="actionNext"
         android:maxLength="5" />
 
     <TextView
@@ -70,6 +72,7 @@
 
 
         <RadioButton
+            android:imeOptions="actionNext"
             android:id="@+id/rdbtnDiario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
             android:textColor="@color/azulmy" />
 
         <RadioButton
+            android:imeOptions="actionNext"
             android:id="@+id/rdbtnHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,6 +111,7 @@
         android:fontFamily="@font/inter"
         android:gravity="top|left"
         android:hint="@string/ex_anotacoes"
+        android:imeOptions="actionDone"
         android:inputType="textMultiLine"
         android:lines="5"
         android:maxLines="5"
@@ -130,7 +135,7 @@
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSalvar"
+            android:id="@+id/adicionarRemedioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="95dp"

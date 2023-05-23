@@ -73,13 +73,13 @@ public class CadastroFragment extends Fragment {
         int mes = Integer.parseInt(mesEditText.getText().toString());
         int ano = Integer.parseInt(anoEditText.getText().toString());
         LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
-        Log.d("MyMed", "Data Nascimento:" + dataNascimento);
+        Log.d("MYMED2023", "Data Nascimento:" + dataNascimento);
         //cria um novo login firebase
         mAuth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
-                Log.w("MyMed", "Falha ao criar novo Login: ", task.getException());
+                Log.w("MYMED2023", "Falha ao criar novo Login: ", task.getException());
             } else {
-                Log.d("MyMed", "Login criado com sucesso");
+                Log.d("MYMED2023", "Login criado com sucesso");
                 //Le o UUI do novo usuário criado
                 String uui = task.getResult().getUser().getUid();
                 //E cria um novo usuario
@@ -92,9 +92,9 @@ public class CadastroFragment extends Fragment {
     void criarUsuario(String uui, Usuario usuario) {
         mDatabase.child(uui).setValue(usuario).addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
-                Log.w("MyMed", "Falha ao criar dados do usuario: ", task.getException());
+                Log.w("MYMED2023", "Falha ao criar dados do usuario: ", task.getException());
             } else {
-                Log.d("MyMed", "Usuario criado com sucesso");
+                Log.d("MYMED2023", "Usuario criado com sucesso");
                 goToLogin();
             }
         });

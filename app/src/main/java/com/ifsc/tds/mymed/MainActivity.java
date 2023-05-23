@@ -37,8 +37,6 @@ MainActivity extends AppCompatActivity {
             rodarTestes();
         });*/
 
-      //  AlarmeViewModel alarme = new ViewModelProvider(this).get(AlarmeViewModel.class);
-     //   alarme.insertLivro(new remedio("ibuprofeno", "tomar com leite") );
     }
 
     public void rodarTestes(){
