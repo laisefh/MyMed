@@ -1,7 +1,6 @@
 package com.ifsc.tds.mymed.auth;
 
 
-
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -15,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,8 +38,7 @@ public class LoginFragment extends Fragment {
             if (user != null) {
                 Log.d("MYMED2023", "Usuário logado");
                 goToHome();
-            }
-            else {
+            } else {
                 Log.d("MYMED2023", "Usuário signed_out");
                 //fazerAlgumaCoisa
             }
@@ -50,7 +49,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
         login = view.findViewById(R.id.editTextEmail);
         password = view.findViewById(R.id.editTextTextPassword2);
         Button loginButton = view.findViewById(R.id.botaoLogar);
@@ -60,32 +59,36 @@ public class LoginFragment extends Fragment {
         return view;
     }
 
-    void fazerCadastro(){
+    void fazerCadastro() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_login_to_cadastro);
     }
 
     /***MÉTODO PARA USAR O SERVIÇO DE AUTENTICAÇÃO POR EMAIL DO FIREBASE***/
-    void fazerLogin(){
+    void fazerLogin() {
         String username = login.getText().toString();
         String password2 = password.getText().toString();
-        //Faz uma tentativa de login com os dados preenchidos na UI
-        mAuth.signInWithEmailAndPassword(username,password2)
-                //Método assíncrono para lidar com a resposta da solicitação
-                .addOnCompleteListener(getActivity(),
-                        task -> {
-                            if (!task.isSuccessful()) {
-                                Log.w("MyMed", "Falha ao efetuar o Login: ", task.getException());
-                            }else{
-                                Log.d("MyMed", "Login Efetuado com sucesso!!!");
-                                NavController nav = Navigation.findNavController(getView());
-                                nav.navigate(R.id.action_cadastro_to_paginaInicial);
-                            }
-                        });
+        //teste rapido para verificar dados
+        if (username.isEmpty() || password2.isEmpty()) {
+            Toast.makeText(getContext(), "Preencha os campos", Toast.LENGTH_LONG).show();
+        } else
+            //Faz uma tentativa de login com os dados preenchidos na UI
+            mAuth.signInWithEmailAndPassword(username, password2)
+                    //Método assíncrono para lidar com a resposta da solicitação
+                    .addOnCompleteListener(getActivity(),
+                            task -> {
+                                if (!task.isSuccessful()) {
+                                    Log.w("MyMed", "Falha ao efetuar o Login: ", task.getException());
+                                } else {
+                                    Log.d("MyMed", "Login Efetuado com sucesso!!!");
+                                    NavController nav = Navigation.findNavController(getView());
+                                    nav.navigate(R.id.action_cadastro_to_paginaInicial);
+                                }
+                            });
     }
 
     /*** MÉTODO SIMPLES PARA ENCAMINHAR PARA A TELA PRINCIPAL ***/
-    void goToHome(){
+    void goToHome() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_cadastro_to_paginaInicial);
     }

@@ -2,9 +2,14 @@ package com.ifsc.tds.mymed;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +34,14 @@ MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //USA A NAVEGAÇÂO PARA MUDAR AS ROTAS NA TOOLBAR
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        NavController navController = navHostFragment.getNavController();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+
 
         /* APENAS PARA TESTES
         livroViewModel = new ViewModelProvider(this).get(LivroViewModel.class);
