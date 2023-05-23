@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragmentTest">
+
+
+    <TextView
+        android:id="@+id/nomeUsuarioTextViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fulano da Silva" />
+
+    <TextView
+        android:id="@+id/emailUsuarioTextViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fulano@fulano.com" />
+
+    <TextView
+        android:id="@+id/dataNascimentoTextViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="21/12/2005" />
+
+    <Button
+        android:id="@+id/logoutHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LogOut" />
+</LinearLayout>
