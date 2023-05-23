@@ -79,15 +79,6 @@
             android:textColor="@color/azulmy" />
 
         <RadioButton
-            android:id="@+id/rdbtnDias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/azulmy"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/diasSemana"
-            android:textColor="@color/azulmy" />
-
-        <RadioButton
             android:id="@+id/rdbtnHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
