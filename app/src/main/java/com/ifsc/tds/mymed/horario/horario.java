@@ -3,10 +3,11 @@ package com.ifsc.tds.mymed.horario;
 import com.ifsc.tds.mymed.remedio.remedio;
 
 import java.sql.Time;
+import java.time.LocalTime;
 
 public class horario {
     String id;
-    Time horarioSelecionado;
+    LocalTime horarioSelecionado;
     remedio remedio;
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
@@ -31,9 +32,9 @@ public class horario {
         this.id = id;
     }
 
-    public Time getHorarioSelecionado() {
+    public LocalTime getHorarioSelecionado() {
         return horarioSelecionado;
     }
 
-    public void setHorarioSelecionado(Time horarioSelecionado) {this.horarioSelecionado = horarioSelecionado;}
+    public void setHorarioSelecionado(LocalTime horarioSelecionado) {this.horarioSelecionado = horarioSelecionado;}
 }

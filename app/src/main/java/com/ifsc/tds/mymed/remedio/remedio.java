@@ -8,8 +8,15 @@ public class remedio {
     String id;
     String nome;
     String anotacoes;
-    Set diasSelecionados;
+    //Set diasSelecionados;
     usuario usuario;
+
+    public remedio(String nome, String anotacoes) {
+        this.nome = nome;
+        this.anotacoes = anotacoes;
+        //this.diasSelecionados = diasSelecionados;
+        //this.usuario = usuario;
+    }
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public remedio(){}
@@ -43,11 +50,11 @@ public class remedio {
         this.anotacoes = anotacoes;
     }
 
-    public Set getDiasSelecionados() {return diasSelecionados;}
+    //public Set getDiasSelecionados() {return diasSelecionados;}
 
-    public void setDiasSelecionados(Set diasSelecionados) {this.diasSelecionados = diasSelecionados;}
+    //public void setDiasSelecionados(Set diasSelecionados) {this.diasSelecionados = diasSelecionados;}
 
-    public usuario getUsuario() { return usuario;}
+    //public usuario getUsuario() { return usuario;}
 
-    public void setUsuario(usuario usuario) {this.usuario = usuario;}
+   // public void setUsuario(usuario usuario) {this.usuario = usuario;}
 }

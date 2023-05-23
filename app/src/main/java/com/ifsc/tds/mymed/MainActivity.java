@@ -11,8 +11,10 @@ import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.ifsc.tds.mymed.alarme.AlarmeViewModel;
 import com.ifsc.tds.mymed.livro.Livro;
 import com.ifsc.tds.mymed.livro.LivroViewModel;
+import com.ifsc.tds.mymed.remedio.remedio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,9 @@ MainActivity extends AppCompatActivity {
         livroViewModel.deleteAll().addOnCompleteListener(task -> {
             rodarTestes();
         });
+
+        AlarmeViewModel alarme = new ViewModelProvider(this).get(AlarmeViewModel.class);
+        alarme.insertLivro(new remedio("ibuprofeno", "tomar com leite") );
     }
 
     public void rodarTestes(){
