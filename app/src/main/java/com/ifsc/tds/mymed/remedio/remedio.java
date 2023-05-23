@@ -1,15 +1,13 @@
 package com.ifsc.tds.mymed.remedio;
 
-import com.ifsc.tds.mymed.usuario.usuario;
-
-import java.util.Set;
+import com.ifsc.tds.mymed.usuario.Usuario;
 
 public class remedio {
     String id;
     String nome;
     String anotacoes;
     //Set diasSelecionados;
-    usuario usuario;
+    Usuario usuario;
 
     public remedio(String nome, String anotacoes) {
         this.nome = nome;

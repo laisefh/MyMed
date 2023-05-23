@@ -1,4 +1,4 @@
-package com.ifsc.tds.mymed;
+package com.ifsc.tds.mymed.auth;
 
 import android.os.Bundle;
 
@@ -15,15 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
-import com.ifsc.tds.mymed.data.model.Usuario;
-
 import java.time.LocalDate;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.ifsc.tds.mymed.R;
+import com.ifsc.tds.mymed.usuario.Usuario;
 
-public class Cadastro extends Fragment {
+public class CadastroFragment extends Fragment {
     private FirebaseAuth mAuth; //acessa os recursos de autenticação do Firebase
     private DatabaseReference mDatabase; //acessa os recursos do banco de dados do Firebase
 
@@ -49,16 +49,18 @@ public class Cadastro extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
         //Configura as referências aos componentes da UI
-        nomeEditText = view.findViewById(R.id.editTextNomeCompleto);
-        emailEditText = view.findViewById(R.id.editTextCadastroEmail);
-        senhaEditText = view.findViewById(R.id.editTextCadastroSenha);
-        diaEditText = view.findViewById(R.id.editTextDia);
-        mesEditText = view.findViewById(R.id.editTextMes);
-        anoEditText = view.findViewById(R.id.editTextAno);
+        nomeEditText = view.findViewById(R.id.cadastrarNomeEditText);
+        emailEditText = view.findViewById(R.id.cadastrarEmailEditText);
+        senhaEditText = view.findViewById(R.id.cadastrarSenhalEditText);
+        diaEditText = view.findViewById(R.id.cadastrarDiaNascimentoEditText);
+        mesEditText = view.findViewById(R.id.cadastrarMesNascimentoEditText);
+        anoEditText = view.findViewById(R.id.cadastrarAnoNascimentoEditText);
         termosRadioButton = view.findViewById(R.id.radioBtnTermos);
         //Adiciona uma ação ao botão cadastrar
-        Button cadastrar = view.findViewById(R.id.buttonCdadastrar);
+        Button cadastrar = view.findViewById(R.id.cadastrarUsuarioButton);
         cadastrar.setOnClickListener(view1 -> fazerCadastro());
+        Button termos = view.findViewById(R.id.verVerTermosButton);
+        termos.setOnClickListener(view12 -> verTermos());
         return view;
     }
 
@@ -81,7 +83,7 @@ public class Cadastro extends Fragment {
                 //Le o UUI do novo usuário criado
                 String uui = task.getResult().getUser().getUid();
                 //E cria um novo usuario
-                Usuario usuario = new Usuario(nome, email, dataNascimento.toString());
+                Usuario usuario = new Usuario(nome, dataNascimento.toString(), email);
                 criarUsuario(uui, usuario);
             }
         });
@@ -102,4 +104,10 @@ public class Cadastro extends Fragment {
         NavController nav = Navigation.findNavController(getView());
         nav.popBackStack();
     }
+
+    void verTermos(){
+        NavController nav = Navigation.findNavController(getView());
+        nav.navigate(R.id.action_paginaInicial_to_termosDeUso);
+    }
+
 }

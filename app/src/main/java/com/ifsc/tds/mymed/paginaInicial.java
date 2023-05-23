@@ -67,7 +67,7 @@ public class paginaInicial extends Fragment {
         //Botão adicionar Remédio, alterar remédio e barra de tarefas
         Button btnAdd = view.findViewById(R.id.btnAdd);
         ImageButton btnAnotacoes = view.findViewById(R.id.btnAnotacoes);
-        ImageButton btnAdd2 = view.findViewById(R.id.btnAdicionar);
+        ImageButton btnAdd2 = view.findViewById(R.id.cadastrarUsuarioButton);
         ImageButton btnConfig = view.findViewById(R.id.btnConfiguracoes);
         ImageButton btnTermo = view.findViewById(R.id.btnContrato);
         //Listener nos botoes

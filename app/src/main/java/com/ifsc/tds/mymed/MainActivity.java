@@ -30,14 +30,15 @@ MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* APENAS PARA TESTES
         livroViewModel = new ViewModelProvider(this).get(LivroViewModel.class);
         //Limpa o banco de dados e inicia os testes
         livroViewModel.deleteAll().addOnCompleteListener(task -> {
             rodarTestes();
-        });
+        });*/
 
-        AlarmeViewModel alarme = new ViewModelProvider(this).get(AlarmeViewModel.class);
-        alarme.insertLivro(new remedio("ibuprofeno", "tomar com leite") );
+      //  AlarmeViewModel alarme = new ViewModelProvider(this).get(AlarmeViewModel.class);
+     //   alarme.insertLivro(new remedio("ibuprofeno", "tomar com leite") );
     }
 
     public void rodarTestes(){

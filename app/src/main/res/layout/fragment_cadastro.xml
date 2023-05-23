@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/editTextNome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0003A9F4"
     android:backgroundTint="@color/white"
     android:orientation="vertical"
-    tools:context=".Cadastro">
+    tools:context=".auth.CadastroFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +30,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtViewNome"
+        android:id="@+id/cadastrarNomeLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
@@ -42,7 +41,7 @@
         android:textSize="28sp" />
 
     <EditText
-        android:id="@+id/editTextNomeCompleto"
+        android:id="@+id/cadastrarNomeEditText"
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
@@ -54,7 +53,7 @@
         android:visibility="visible" />
 
     <TextView
-        android:id="@+id/txtViewNovoEmail"
+        android:id="@+id/cadastrarEmailLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
@@ -64,7 +63,7 @@
         android:textSize="28sp" />
 
     <EditText
-        android:id="@+id/editTextCadastroEmail"
+        android:id="@+id/cadastrarEmailEditText"
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
@@ -76,7 +75,7 @@
         android:visibility="visible" />
 
     <TextView
-        android:id="@+id/txtViewCadastroSenha"
+        android:id="@+id/cadastrarSenhalLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
@@ -86,7 +85,7 @@
         android:textSize="28sp" />
 
     <EditText
-        android:id="@+id/editTextCadastroSenha"
+        android:id="@+id/cadastrarSenhalEditText"
         android:layout_width="339dp"
         android:layout_height="54dp"
         android:layout_gravity="center"
@@ -98,7 +97,7 @@
         android:visibility="visible" />
 
     <TextView
-        android:id="@+id/txtViewNascimento"
+        android:id="@+id/cadastrarDataNascimentoLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
@@ -115,7 +114,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextDia"
+            android:id="@+id/cadastrarDiaNascimentoEditText"
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -141,7 +140,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editTextMes"
+            android:id="@+id/cadastrarMesNascimentoEditText"
             android:layout_width="46dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -167,7 +166,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editTextAno"
+            android:id="@+id/cadastrarAnoNascimentoEditText"
             android:layout_width="99dp"
             android:layout_height="match_parent"
             android:layout_marginRight="20dp"
@@ -207,7 +206,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/btnTermos"
+            android:id="@+id/verVerTermosButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/transparente"
@@ -223,7 +222,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAdicionar"
+        android:id="@+id/cadastrarUsuarioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

@@ -90,7 +90,7 @@ public class AlarmeViewModel extends ViewModel{
 
     public void insertLivro(remedio remedio){
         Alarme a = new Alarme(remedio);
-        a.setDatafinal();
+       // a.setDatafinal();
         a.setDataInicial(null);
         a.setHorario(null);
         listaAlarmesRef.push().setValue(a);
