@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/addRemedio"
-        android:name="com.ifsc.tds.mymed.addRemedio"
+        android:name="com.ifsc.tds.mymed.AddRemedio"
         android:label="fragment_add_remedio"
         tools:layout="@layout/fragment_add_remedio">
         <action

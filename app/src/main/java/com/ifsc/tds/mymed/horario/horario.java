@@ -1,26 +1,25 @@
 package com.ifsc.tds.mymed.horario;
 
-import com.ifsc.tds.mymed.remedio.remedio;
+import com.ifsc.tds.mymed.remedio.Remedio;
 
-import java.sql.Time;
 import java.time.LocalTime;
 
 public class horario {
     String id;
     LocalTime horarioSelecionado;
-    remedio remedio;
+    Remedio remedio;
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public horario(){}
 
     //NECESSÀRIO GET E SET
-    public remedio getRemedio() {
+    public Remedio getRemedio() {
         return remedio;
     }
 
-    public void setRemedio(remedio remedio) {this.remedio = remedio; }
+    public void setRemedio(Remedio remedio) {this.remedio = remedio; }
 
-    public void remedio(remedio remedio) {
+    public void remedio(Remedio remedio) {
         this.remedio = remedio;
     }
 

@@ -1,7 +1,7 @@
 package com.ifsc.tds.mymed.alarme;
 
 
-import com.ifsc.tds.mymed.remedio.remedio;
+import com.ifsc.tds.mymed.remedio.Remedio;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -11,22 +11,22 @@ public class Alarme {
     LocalDate dataInicial;
     LocalDate datafinal;
     LocalTime horario;
-    remedio remedio;
+    Remedio remedio;
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public Alarme(){}
 
     //NECESSÀRIO GET E SET
 
-    public Alarme(remedio remedio) {
+    public Alarme(Remedio remedio) {
         this.remedio = remedio;
     }
 
-    public remedio getRemedio() {
+    public Remedio getRemedio() {
         return getRemedio();
     }
 
-    public void setRemedio(remedio remedio){this.remedio = remedio;}
+    public void setRemedio(Remedio remedio){this.remedio = remedio;}
 
     public String getId() {
         return id;

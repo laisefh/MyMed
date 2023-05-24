@@ -2,14 +2,18 @@ package com.ifsc.tds.mymed.remedio;
 
 import com.ifsc.tds.mymed.usuario.Usuario;
 
-public class remedio {
+public class Remedio {
     String id;
     String nome;
     String anotacoes;
-    //Set diasSelecionados;
-    Usuario usuario;
 
-    public remedio(String nome, String anotacoes) {
+    String horaInicial;
+
+    int tipoFrequencia;
+
+    //Set diasSelecionados;
+
+    public Remedio(String nome, String anotacoes) {
         this.nome = nome;
         this.anotacoes = anotacoes;
         //this.diasSelecionados = diasSelecionados;
@@ -17,7 +21,7 @@ public class remedio {
     }
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
-    public remedio(){}
+    public Remedio(){}
 
     //NECESSÀRIO GET E SET
     public String getNome() {
@@ -28,8 +32,11 @@ public class remedio {
         this.nome = nome;
     }
 
-    public remedio(String nome) {
+    public Remedio(String nome, String horaInicial, String anotacoes, int tipoFrequencia) {
         this.nome = nome;
+        this.horaInicial = horaInicial;
+        this.anotacoes = anotacoes;
+        this.tipoFrequencia = tipoFrequencia;
     }
 
     public String getId() {
@@ -52,7 +59,19 @@ public class remedio {
 
     //public void setDiasSelecionados(Set diasSelecionados) {this.diasSelecionados = diasSelecionados;}
 
-    //public usuario getUsuario() { return usuario;}
+    public String getHoraInicial() {
+        return horaInicial;
+    }
 
-   // public void setUsuario(usuario usuario) {this.usuario = usuario;}
+    public void setHoraInicial(String horaInicial) {
+        this.horaInicial = horaInicial;
+    }
+
+    public int getTipoFrequencia() {
+        return tipoFrequencia;
+    }
+
+    public void setTipoFrequencia(int tipoFrequencia) {
+        this.tipoFrequencia = tipoFrequencia;
+    }
 }

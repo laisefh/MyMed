@@ -3,22 +3,36 @@ package com.ifsc.tds.mymed;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 
-public class addRemedio extends Fragment {
+import com.ifsc.tds.mymed.remedio.RemedioViewModel;
+
+public class AddRemedio extends Fragment {
+    static int DIARIAMENTE = 1;
+    static int INTERVALO_HORA = 2;
+
+    RemedioViewModel remedioViewModel;
+
+    EditText nomeEditText;
+    EditText horaInicialEditText;
+    EditText anotacoesEditText;
+    RadioGroup tipoFrequencia;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+        remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
     }
 
     @Override
@@ -35,6 +49,10 @@ public class addRemedio extends Fragment {
         ImageButton btnConfig = view.findViewById(R.id.btnAddRemedioConfiguracoes);
         ImageButton btnTermo = view.findViewById(R.id.btnAddRemedioContrato);
 
+        nomeEditText = view.findViewById(R.id.editTextRemedio);
+        horaInicialEditText = view.findViewById(R.id.editTextHorario);
+        anotacoesEditText = view.findViewById(R.id.editTxtAnotacoes);
+        tipoFrequencia = view.findViewById(R.id.radioGroupTipo);
 
         //On listener dos botôes
         btnSalvar.setOnClickListener(view1 -> salvar());
@@ -47,8 +65,21 @@ public class addRemedio extends Fragment {
         return view;
     }
     void salvar() {
+        String nome = nomeEditText.getText().toString();
+        String hora = horaInicialEditText.getText().toString();
+        String anotacoes = anotacoesEditText.getText().toString();
+
+        int selecionado = tipoFrequencia.getCheckedRadioButtonId();
+        int tipoFrequencia = 0;
+        if (selecionado == R.id.rdbtnDiario)
+            tipoFrequencia = DIARIAMENTE;
+        else if (selecionado == R.id.rdbtnHoras)
+            tipoFrequencia = INTERVALO_HORA;
+
+        remedioViewModel.insertRemedio(nome,hora,anotacoes, tipoFrequencia);
+        //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
-        nav.navigate(R.id.action_addRemedio_to_paginaInicial2);
+        nav.popBackStack();
     }
 
     void excluir() {
@@ -74,5 +105,4 @@ public class addRemedio extends Fragment {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_addRemedio_to_termosDeUso);
     }
-
 }

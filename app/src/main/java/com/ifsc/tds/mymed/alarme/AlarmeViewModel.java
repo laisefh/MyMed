@@ -15,9 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ifsc.tds.mymed.livro.Livro;
-import com.ifsc.tds.mymed.remedio.remedio;
+import com.ifsc.tds.mymed.remedio.Remedio;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +87,7 @@ public class AlarmeViewModel extends ViewModel{
 
     }
 
-    public void insertLivro(remedio remedio){
+    public void insertLivro(Remedio remedio){
         Alarme a = new Alarme(remedio);
        // a.setDatafinal();
         a.setDataInicial(null);

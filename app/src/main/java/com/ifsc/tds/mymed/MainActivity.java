@@ -1,11 +1,8 @@
 package com.ifsc.tds.mymed;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -14,14 +11,9 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.ifsc.tds.mymed.alarme.AlarmeViewModel;
 import com.ifsc.tds.mymed.livro.Livro;
 import com.ifsc.tds.mymed.livro.LivroViewModel;
-import com.ifsc.tds.mymed.remedio.remedio;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class

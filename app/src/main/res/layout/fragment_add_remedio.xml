@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/azulmy"
     android:orientation="vertical"
-    tools:context=".addRemedio">
+    tools:context=".AddRemedio">
 
     <TextView
         android:id="@+id/txtAdd"
@@ -65,6 +65,7 @@
         android:textSize="20sp" />
 
     <RadioGroup
+        android:id="@+id/radioGroupTipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -72,22 +73,22 @@
 
 
         <RadioButton
-            android:imeOptions="actionNext"
             android:id="@+id/rdbtnDiario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
             android:buttonTint="@color/azulmy"
+            android:fontFamily="@font/inter_bold"
+            android:imeOptions="actionNext"
             android:text="@string/diario"
             android:textColor="@color/azulmy" />
 
         <RadioButton
-            android:imeOptions="actionNext"
             android:id="@+id/rdbtnHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/azulmy"
             android:fontFamily="@font/inter_bold"
+            android:imeOptions="actionNext"
             android:text="@string/intervaloHoras"
             android:textColor="@color/azulmy" />
 
