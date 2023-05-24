@@ -22,27 +22,15 @@ import com.ifsc.tds.mymed.R;
 
 public class LoginFragment extends Fragment {
     private FirebaseAuth mAuth; //acessa os recursos de autenticação do Firebase
-    private FirebaseAuth.AuthStateListener mAuthListener; //monitora as mudanças de login
 
     //Variáveis para referenciar os elementos da UI
     private EditText login;
     private EditText password;
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
-        mAuthListener = firebaseAuth -> {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user != null) {
-                Log.d("MYMED2023", "Usuário logado");
-                goToHome();
-            } else {
-                Log.d("MYMED2023", "Usuário signed_out");
-                //fazerAlgumaCoisa
-            }
-        };
     }
 
     @Override
@@ -71,40 +59,25 @@ public class LoginFragment extends Fragment {
         //teste rapido para verificar dados
         if (username.isEmpty() || password2.isEmpty()) {
             Toast.makeText(getContext(), "Preencha os campos", Toast.LENGTH_LONG).show();
-        } else
+        } else {
             //Faz uma tentativa de login com os dados preenchidos na UI
             mAuth.signInWithEmailAndPassword(username, password2)
                     //Método assíncrono para lidar com a resposta da solicitação
                     .addOnCompleteListener(getActivity(),
                             task -> {
                                 if (!task.isSuccessful()) {
-                                    Log.w("MyMed", "Falha ao efetuar o Login: ", task.getException());
+                                    Log.w("MyMed2023", "Falha ao efetuar o Login: ", task.getException());
                                 } else {
-                                    Log.d("MyMed", "Login Efetuado com sucesso!!!");
-                                    NavController nav = Navigation.findNavController(getView());
-                                    nav.navigate(R.id.action_cadastro_to_paginaInicial);
+                                    Log.d("MyMed2023", "Login Efetuado com sucesso!!!");
+                                    goToHome();
                                 }
                             });
+        }
     }
 
     /*** MÉTODO SIMPLES PARA ENCAMINHAR PARA A TELA PRINCIPAL ***/
     void goToHome() {
         NavController nav = Navigation.findNavController(getView());
-        nav.navigate(R.id.action_cadastro_to_paginaInicial);
-    }
-
-    /*** NECESSÁRIO PARA DESATIVAR O MONITORAMENTO COM O APP MINIMIZADO/MAXIMIZADO ***/
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
+        nav.popBackStack();
     }
 }

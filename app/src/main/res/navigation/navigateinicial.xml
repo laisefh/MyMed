@@ -2,19 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/login">
+    app:startDestination="@id/paginaInicial">
     <fragment
         android:id="@+id/cadastrarUsuario"
         android:name="com.ifsc.tds.mymed.auth.CadastroFragment"
         android:label="Cadastro"
         tools:layout="@layout/fragment_cadastro">
         <action
-            android:id="@+id/action_paginaInicial_to_paginaInicial"
+            android:id="@+id/action_cadastrarUsuario_to_paginaInicial"
             app:destination="@id/paginaInicial"
             app:popUpTo="@id/paginaInicial"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_paginaInicial_to_termosDeUso"
+            android:id="@+id/action_cadastrarUsuario_to_termosDeUso"
             app:destination="@id/termosDeUso" />
     </fragment>
     <fragment
@@ -25,9 +25,9 @@
             android:id="@+id/action_login_to_cadastro"
             app:destination="@id/cadastrarUsuario" />
         <action
-            android:id="@+id/action_cadastro_to_paginaInicial"
+            android:id="@+id/action_login_to_paginaInicial"
             app:destination="@id/paginaInicial"
-            app:popUpTo="@id/paginaInicial"
+            app:popUpTo="@id/fragmentContainerView"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_paginaInicial2_to_termosDeUso2"
             app:destination="@id/termosDeUso" />
+        <action
+            android:id="@+id/action_paginaInicial_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/addRemedio"

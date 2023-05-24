@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,45 +22,24 @@ import android.widget.ImageButton;
  * create an instance of this fragment.
  */
 public class paginaInicial extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public paginaInicial() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment paginaInicial.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static paginaInicial newInstance(String param1, String param2) {
-        paginaInicial fragment = new paginaInicial();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private FirebaseAuth mAuth; //acessa os recursos de autenticação do Firebase
+    private FirebaseAuth.AuthStateListener mAuthListener; //monitora as mudanças de login
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = firebaseAuth -> {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user != null) {
+                Log.d("MYMED2023", "Usuário logado");
+            } else {
+                Log.d("MYMED2023", "Usuário signed_out");
+                Navigation.findNavController(getView()).navigate(R.id.action_paginaInicial_to_login);
+            }
+        };
+
     }
 
     @Override
@@ -95,12 +78,28 @@ public class paginaInicial extends Fragment {
     }
 
     void irConfiguracoes() {
-        NavController nav = Navigation.findNavController(getView());
-        nav.navigate(R.id.action_paginaInicial2_to_configuracoes);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.signOut();
+//        NavController nav = Navigation.findNavController(getView());
+//        nav.navigate(R.id.action_paginaInicial2_to_configuracoes);
     }
 
     void verTermos() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_paginaInicial2_to_termosDeUso);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }

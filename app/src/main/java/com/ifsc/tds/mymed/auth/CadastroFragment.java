@@ -107,7 +107,7 @@ public class CadastroFragment extends Fragment {
 
     void verTermos(){
         NavController nav = Navigation.findNavController(getView());
-        nav.navigate(R.id.action_paginaInicial_to_termosDeUso);
+        nav.navigate(R.id.action_cadastrarUsuario_to_termosDeUso);
     }
 
 }
