@@ -6,17 +6,6 @@
     android:orientation="vertical"
     tools:context=".relato">
 
-    <TextView
-        android:id="@+id/txtViewrelato"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:gravity="center"
-        android:paddingTop="3dp"
-        android:text="@string/relato"
-        android:textColor="@color/azulmy"
-        android:textSize="24sp" />
-
     <EditText
         android:id="@+id/editTxtRelato"
         android:layout_width="match_parent"

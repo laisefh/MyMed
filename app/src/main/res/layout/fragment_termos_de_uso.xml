@@ -19,16 +19,8 @@
             android:layout_height="45dp"
             android:layout_weight="1"
             android:src="@drawable/contrato" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtViewTermosdeUso"
-            android:layout_width="265dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/tesmosDeUso"
-            android:textColor="@color/laranjamed"
-            android:textSize="28sp" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewtermosdeUso"

@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/cadastrarUsuario"
         android:name="com.ifsc.tds.mymed.auth.CadastroFragment"
-        android:label="Cadastro"
+        android:label="Cadastro de Usuário"
         tools:layout="@layout/fragment_cadastro">
         <action
             android:id="@+id/action_cadastrarUsuario_to_paginaInicial"
@@ -20,6 +20,7 @@
     <fragment
         android:id="@+id/login"
         android:name="com.ifsc.tds.mymed.auth.LoginFragment"
+        android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_cadastro"
@@ -33,12 +34,12 @@
     <fragment
         android:id="@+id/termosDeUso"
         android:name="com.ifsc.tds.mymed.termosDeUso"
-        android:label="fragment_termos_de_uso"
+        android:label="Termos de Uso"
         tools:layout="@layout/fragment_termos_de_uso" />
     <fragment
         android:id="@+id/relato"
         android:name="com.ifsc.tds.mymed.relato"
-        android:label="fragment_relato"
+        android:label="Relato"
         tools:layout="@layout/fragment_relato">
         <action
             android:id="@+id/action_relato_to_addRemedio"
@@ -56,7 +57,7 @@
     <fragment
         android:id="@+id/paginaInicial"
         android:name="com.ifsc.tds.mymed.paginaInicial"
-        android:label="fragment_pagina_inicial"
+        android:label="Página Inicial"
         tools:layout="@layout/fragment_pagina_inicial">
         <action
             android:id="@+id/action_paginaInicial2_to_addRemedio"
@@ -80,7 +81,7 @@
     <fragment
         android:id="@+id/addRemedio"
         android:name="com.ifsc.tds.mymed.AddRemedio"
-        android:label="fragment_add_remedio"
+        android:label="Adicionar Remédio"
         tools:layout="@layout/fragment_add_remedio">
         <action
             android:id="@+id/action_addRemedio_to_relato"
@@ -98,7 +99,7 @@
     <fragment
         android:id="@+id/configuracoes"
         android:name="com.ifsc.tds.mymed.configuracoes"
-        android:label="fragment_configuracoes"
+        android:label="Configurações"
         tools:layout="@layout/fragment_configuracoes">
         <action
             android:id="@+id/action_configuracoes_to_termosDeUso"
