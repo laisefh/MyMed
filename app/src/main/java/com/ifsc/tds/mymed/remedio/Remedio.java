@@ -6,12 +6,9 @@ public class Remedio {
     String id;
     String nome;
     String anotacoes;
-
     String horaInicial;
-
+    String intervaloHoras;
     int tipoFrequencia;
-
-    //Set diasSelecionados;
 
     public Remedio(String nome, String anotacoes) {
         this.nome = nome;

@@ -8,9 +8,7 @@ import java.time.LocalTime;
 
 public class Alarme {
     String id;
-    LocalDate dataInicial;
-    LocalDate datafinal;
-    LocalTime horario;
+    String horario;
     Remedio remedio;
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
@@ -36,20 +34,8 @@ public class Alarme {
         this.id = id;
     }
 
-    public LocalDate getDataInicial() {
-        return dataInicial;
-    }
+    public String getHorario() {return horario;}
 
-    public void setDataInicial(LocalDate dataInicial){this.dataInicial = dataInicial;}
-
-    public LocalDate getDatafinal() {
-        return datafinal;
-    }
-
-    public void setDatafinal(LocalDate datafinal){this.datafinal = datafinal;}
-
-    public LocalTime getHorario() {return horario;}
-
-    public void setHorario(LocalTime horario){this.horario = horario;}
+    public void setHorario(String horario){this.horario = horario;}
 
 }

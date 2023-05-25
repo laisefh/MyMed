@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ifsc.tds.mymed.R;
-import com.ifsc.tds.mymed.usuario.Usuario;
+import com.ifsc.tds.mymed.data.model.Usuario;
 
 public class CadastroFragment extends Fragment {
     private FirebaseAuth mAuth; //acessa os recursos de autenticação do Firebase
@@ -83,7 +83,7 @@ public class CadastroFragment extends Fragment {
                 //Le o UUI do novo usuário criado
                 String uui = task.getResult().getUser().getUid();
                 //E cria um novo usuario
-                Usuario usuario = new Usuario(nome, dataNascimento.toString(), email);
+                Usuario usuario = new Usuario(nome, dataNascimento.toString(), senha, email);
                 criarUsuario(uui, usuario);
             }
         });

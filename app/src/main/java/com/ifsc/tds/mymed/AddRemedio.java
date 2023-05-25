@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.ifsc.tds.mymed.remedio.RemedioViewModel;
@@ -28,11 +29,14 @@ public class AddRemedio extends Fragment {
     EditText horaInicialEditText;
     EditText anotacoesEditText;
     RadioGroup tipoFrequencia;
+    EditText edtTxtSelectHoras;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
+
+
     }
 
     @Override
@@ -48,11 +52,10 @@ public class AddRemedio extends Fragment {
         ImageButton btnHome = view.findViewById(R.id.btnAddRemedioHome);
         ImageButton btnConfig = view.findViewById(R.id.btnAddRemedioConfiguracoes);
         ImageButton btnTermo = view.findViewById(R.id.btnAddRemedioContrato);
-
         nomeEditText = view.findViewById(R.id.editTextRemedio);
         horaInicialEditText = view.findViewById(R.id.editTextHorario);
         anotacoesEditText = view.findViewById(R.id.editTxtAnotacoes);
-        tipoFrequencia = view.findViewById(R.id.radioGroupTipo);
+        edtTxtSelectHoras = view.findViewById(R.id.editTextSeleconarHorario);
 
         //On listener dos botôes
         btnSalvar.setOnClickListener(view1 -> salvar());
@@ -62,8 +65,10 @@ public class AddRemedio extends Fragment {
         btnConfig.setOnClickListener(view1 -> irConfiguracoes());
         btnTermo.setOnClickListener(view1 -> verTermos());
 
+
         return view;
     }
+
     void salvar() {
         String nome = nomeEditText.getText().toString();
         String hora = horaInicialEditText.getText().toString();
@@ -75,8 +80,9 @@ public class AddRemedio extends Fragment {
             tipoFrequencia = DIARIAMENTE;
         else if (selecionado == R.id.rdbtnHoras)
             tipoFrequencia = INTERVALO_HORA;
+        edtTxtSelectHoras.setVisibility(View.VISIBLE);
 
-        remedioViewModel.insertRemedio(nome,hora,anotacoes, tipoFrequencia);
+        remedioViewModel.insertRemedio(nome, hora, anotacoes, tipoFrequencia);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
         nav.popBackStack();
@@ -86,6 +92,7 @@ public class AddRemedio extends Fragment {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_addRemedio_to_paginaInicial2);
     }
+
     void irParaHome() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_addRemedio_to_paginaInicial2);
@@ -105,4 +112,6 @@ public class AddRemedio extends Fragment {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_addRemedio_to_termosDeUso);
     }
+
+
 }
