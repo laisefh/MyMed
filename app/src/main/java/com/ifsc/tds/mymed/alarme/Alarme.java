@@ -3,9 +3,6 @@ package com.ifsc.tds.mymed.alarme;
 
 import com.ifsc.tds.mymed.remedio.Remedio;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 public class Alarme {
     String id;
     String horario;
@@ -14,6 +11,11 @@ public class Alarme {
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public Alarme(){}
 
+    public Alarme(String id, String horario, Remedio remedio) {
+        this.id = id;
+        this.horario = horario;
+        this.remedio = remedio;
+    }
     //NECESSÀRIO GET E SET
 
     public Alarme(Remedio remedio) {

@@ -1,6 +1,6 @@
 package com.ifsc.tds.mymed.remedio;
 
-import com.ifsc.tds.mymed.usuario.Usuario;
+import com.ifsc.tds.mymed.data.model.Usuario;
 
 public class Remedio {
     String id;
@@ -10,15 +10,19 @@ public class Remedio {
     String intervaloHoras;
     int tipoFrequencia;
 
-    public Remedio(String nome, String anotacoes) {
-        this.nome = nome;
-        this.anotacoes = anotacoes;
-        //this.diasSelecionados = diasSelecionados;
-        //this.usuario = usuario;
-    }
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public Remedio(){}
+
+    public Remedio(String id, String nome, String horaInicial, String anotacoes, int tipoFrequencia) {
+        this.id = id;
+        this.nome = nome;
+        this.horaInicial = horaInicial;
+        this.anotacoes = anotacoes;
+        this.intervaloHoras = intervaloHoras;
+        this.tipoFrequencia = tipoFrequencia;
+    }
+
 
     //NECESSÀRIO GET E SET
     public String getNome() {
@@ -29,32 +33,21 @@ public class Remedio {
         this.nome = nome;
     }
 
-    public Remedio(String nome, String horaInicial, String anotacoes, int tipoFrequencia) {
-        this.nome = nome;
-        this.horaInicial = horaInicial;
-        this.anotacoes = anotacoes;
-        this.tipoFrequencia = tipoFrequencia;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getAnotacoes() {
         return anotacoes;
+    }
+
+    public void setIntervaloHoras(String intervaloHoras) {
+        this.intervaloHoras = intervaloHoras;
+    }
+
+    public String getIntervaloHoras() {
+        return intervaloHoras;
     }
 
     public void setAnotacoes(String anotacoes) {
         this.anotacoes = anotacoes;
     }
-
-    //public Set getDiasSelecionados() {return diasSelecionados;}
-
-    //public void setDiasSelecionados(Set diasSelecionados) {this.diasSelecionados = diasSelecionados;}
 
     public String getHoraInicial() {
         return horaInicial;
@@ -70,5 +63,13 @@ public class Remedio {
 
     public void setTipoFrequencia(int tipoFrequencia) {
         this.tipoFrequencia = tipoFrequencia;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

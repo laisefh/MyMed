@@ -30,6 +30,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -66,10 +67,10 @@ public class LoginFragment extends Fragment {
                     .addOnCompleteListener(getActivity(),
                             task -> {
                                 if (!task.isSuccessful()) {
-                                    Log.w("MyMed2023", "Falha ao efetuar o Login: ", task.getException());
-                                } else {
                                     Log.d("MyMed2023", "Login Efetuado com sucesso!!!");
                                     goToHome();
+                                } else {
+                                    Log.w("MyMed2023", "Falha ao efetuar o Login: ", task.getException());
                                 }
                             });
         }

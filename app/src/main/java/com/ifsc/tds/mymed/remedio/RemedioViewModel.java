@@ -84,8 +84,8 @@ public class RemedioViewModel extends ViewModel {
 
     }
 
-    public void insertRemedio(String nome, String horaInicial, String anotacoes, int tipoFrequencia){
-        Remedio novo = new Remedio(nome, horaInicial, anotacoes, tipoFrequencia);
+    public void insertRemedio(String id, String nome, String horaInicial, String anotacoes, int tipoFrequencia){
+        Remedio novo = new Remedio(id, nome, horaInicial, anotacoes, tipoFrequencia);
         listaRemediosRef.push().setValue(novo);
     }
 
