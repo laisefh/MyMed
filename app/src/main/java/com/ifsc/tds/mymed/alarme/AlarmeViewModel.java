@@ -60,7 +60,7 @@ public class AlarmeViewModel extends ViewModel{
         });
     }
 
-    public LiveData<Alarme> getLivro(String id) {
+    public LiveData<Alarme> getAlarme(String id) {
         if (alarme == null) {
             alarme = new MutableLiveData<Alarme>();
             carregarAlarmes(id);
@@ -87,14 +87,14 @@ public class AlarmeViewModel extends ViewModel{
 
     }
 
-    public void insertLivro(Remedio remedio){
+    public void insertAlarme(Remedio remedio){
         Alarme a = new Alarme(remedio);
        // a.setDatafinal();
         a.setHorario(null);
         listaAlarmesRef.push().setValue(a);
     }
 
-    public void deleteLivro(String id){
+    public void deleteAlarme(String id){
         listaAlarmesRef.child(id).removeValue();
         //Opcional, adicionar retorno
         listaAlarmesRef.child(id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -108,14 +108,14 @@ public class AlarmeViewModel extends ViewModel{
         });
     }
 
-    public void update(Livro livro){
-        listaAlarmesRef.child(livro.getId()).setValue(livro);
+    public void update(Alarme alarme1){
+        listaAlarmesRef.child(alarme1.getId()).setValue(alarme1);
         //Opcional, adicionar retorno (Versão resumida com lambda)
-        listaAlarmesRef.child(livro.getId()).setValue(livro).addOnCompleteListener(task -> {
+        listaAlarmesRef.child(alarme1.getId()).setValue(alarme1).addOnCompleteListener(task -> {
             if (task.isSuccessful())
-                Log.d("MYMED2023", "Livro editado: " + alarme.getValue());
+                Log.d("MYMED2023", "Alarme editado: " + alarme.getValue());
             else
-                Log.d("MYMED2023", "Não foi editar o livro: " + alarme.getValue());
+                Log.d("MYMED2023", "Não foi editar o alarme: " + alarme.getValue());
         });
     }
 

@@ -25,7 +25,7 @@ public class RemedioViewModel extends ViewModel {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference listaRemediosRef = database.getReference("lista-remedios");
 
-    public LiveData<List<Remedio>> getListaLivros() {
+    public LiveData<List<Remedio>> getListaRemedios() {
         if (listaRemedios == null) {
             listaRemedios = new MutableLiveData<List<Remedio>>();
             carregarRemedios();
@@ -57,7 +57,7 @@ public class RemedioViewModel extends ViewModel {
         });
     }
 
-    public LiveData<Remedio> getLivro(String id) {
+    public LiveData<Remedio> getRemedio(String id) {
         if (remedio == null) {
             remedio = new MutableLiveData<>();
             carregarRemedio(id);
@@ -66,8 +66,8 @@ public class RemedioViewModel extends ViewModel {
     }
 
     private void carregarRemedio(String id){
-        DatabaseReference livroRef = listaRemediosRef.child(id);
-        livroRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference AlarmeRef = listaRemediosRef.child(id);
+        AlarmeRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Remedio novo = snapshot.getValue(Remedio.class);
