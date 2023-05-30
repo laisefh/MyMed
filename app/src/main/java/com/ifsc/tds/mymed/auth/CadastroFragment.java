@@ -83,7 +83,7 @@ public class CadastroFragment extends Fragment {
                 //Le o UUI do novo usuário criado
                 String uui = task.getResult().getUser().getUid();
                 //E cria um novo usuario
-                Usuario usuario = new Usuario(nome, dataNascimento.toString(), senha, email);
+                Usuario usuario = new Usuario(nome, senha, dataNascimento.toString(), email);
                 criarUsuario(uui, usuario);
             }
         });

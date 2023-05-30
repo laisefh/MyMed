@@ -10,7 +10,7 @@ public class Usuario {
         // Construtor vazio necessário para o Firebase Realtime Database
     }
 
-    public Usuario(String nome, String email, String senha, String dataNascimento) {
+    public Usuario(String nome, String senha, String email, String dataNascimento) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;

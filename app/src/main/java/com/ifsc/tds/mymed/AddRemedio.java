@@ -30,6 +30,7 @@ public class AddRemedio extends Fragment {
     EditText anotacoesEditText;
     RadioGroup tipoFrequencia;
     EditText edtTxtSelectHoras;
+    EditText editTextSeleconarHorario;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class AddRemedio extends Fragment {
         horaInicialEditText = view.findViewById(R.id.editTextHorario);
         anotacoesEditText = view.findViewById(R.id.editTxtAnotacoes);
         edtTxtSelectHoras = view.findViewById(R.id.editTextSeleconarHorario);
+        editTextSeleconarHorario = view.findViewById(R.id.editTextSeleconarHorario);
 
         //On listener dos botôes
         btnSalvar.setOnClickListener(view1 -> salvar());
@@ -73,6 +75,7 @@ public class AddRemedio extends Fragment {
         String nome = nomeEditText.getText().toString();
         String hora = horaInicialEditText.getText().toString();
         String anotacoes = anotacoesEditText.getText().toString();
+        String intervaloHoras = editTextSeleconarHorario.getText().toString();
 
         int selecionado = tipoFrequencia.getCheckedRadioButtonId();
         int tipoFrequencia = 0;
@@ -82,7 +85,7 @@ public class AddRemedio extends Fragment {
             tipoFrequencia = INTERVALO_HORA;
         edtTxtSelectHoras.setVisibility(View.VISIBLE);
 
-        remedioViewModel.insertRemedio(nome, hora, anotacoes, tipoFrequencia);
+        remedioViewModel.insertRemedio(nome, hora, anotacoes, intervaloHoras, tipoFrequencia);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
         nav.popBackStack();
