@@ -83,7 +83,7 @@ public class CadastroFragment extends Fragment {
                 //Le o UUI do novo usuário criado
                 String uui = task.getResult().getUser().getUid();
                 //E cria um novo usuario
-                Usuario usuario = new Usuario(nome, senha, dataNascimento.toString(), email);
+                Usuario usuario = new Usuario(nome, senha, email, dataNascimento.toString());
                 criarUsuario(uui, usuario);
             }
         });
@@ -95,14 +95,14 @@ public class CadastroFragment extends Fragment {
                 Log.w("MYMED2023", "Falha ao criar dados do usuario: ", task.getException());
             } else {
                 Log.d("MYMED2023", "Usuario criado com sucesso");
-                goToLogin();
+                goToHome();
             }
         });
     }
 
-    void goToLogin() {
+    void goToHome() {
         NavController nav = Navigation.findNavController(getView());
-        nav.popBackStack();
+        nav.navigate(R.id.action_cadastrarUsuario_to_paginaInicial);
     }
 
     void verTermos(){

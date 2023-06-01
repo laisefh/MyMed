@@ -3,6 +3,8 @@ package com.ifsc.tds.mymed;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -15,6 +17,12 @@ import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.ifsc.tds.mymed.livro.Livro;
+import com.ifsc.tds.mymed.remedio.Remedio;
+import com.ifsc.tds.mymed.remedio.RemedioViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +32,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class paginaInicial extends Fragment {
     private FirebaseAuth mAuth; //acessa os recursos de autenticação do Firebase
     private FirebaseAuth.AuthStateListener mAuthListener; //monitora as mudanças de login
+
+    private RemedioViewModel remedioViewModel;
+    List<Remedio> lista;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +51,17 @@ public class paginaInicial extends Fragment {
             }
         };
 
+
+        remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
+        lista = new ArrayList<Remedio>();
+        remedioViewModel.getListaRemedios().observe(this, remedios -> {
+            lista = remedios;
+            Log.d("MYMED2023", "Lista atualizada: " + lista);
+            int cont = 0;
+            for(Remedio r: lista){
+                Log.d("MYMED2023", cont++ + "- Remedio: " + r.getNome());
+            }
+        });
     }
 
     @Override

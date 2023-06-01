@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.ifsc.tds.mymed.remedio.RemedioViewModel;
 
 public class AddRemedio extends Fragment {
@@ -67,6 +68,8 @@ public class AddRemedio extends Fragment {
         btnConfig.setOnClickListener(view1 -> irConfiguracoes());
         btnTermo.setOnClickListener(view1 -> verTermos());
 
+        tipoFrequencia = view.findViewById(R.id.radioGroupTipo);
+
 
         return view;
     }
@@ -83,9 +86,13 @@ public class AddRemedio extends Fragment {
             tipoFrequencia = DIARIAMENTE;
         else if (selecionado == R.id.rdbtnHoras)
             tipoFrequencia = INTERVALO_HORA;
-        edtTxtSelectHoras.setVisibility(View.VISIBLE);
+//        edtTxtSelectHoras.setVisibility(View.VISIBLE);
 
-        remedioViewModel.insertRemedio(nome, hora, anotacoes, intervaloHoras, tipoFrequencia);
+        //Obter informação do usuário
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getUid();
+
+        remedioViewModel.insertRemedio(uuid, nome, hora, intervaloHoras, anotacoes, tipoFrequencia);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
         nav.popBackStack();
