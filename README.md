@@ -66,7 +66,7 @@ Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar 
 
 ## Casos de Uso
 
-Exemplo: A aplicação pode ser utilizada para cadastrar usuários, medicações, escrever relatos, fazer anotações, e enviar notificações.
+A aplicação pode ser utilizada para cadastrar usuários, medicações, escrever relatos, fazer anotações, e enviar notificações.
 
 ## Tarefas em aberto
 
