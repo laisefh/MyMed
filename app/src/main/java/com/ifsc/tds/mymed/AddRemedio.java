@@ -34,6 +34,10 @@ public class AddRemedio extends Fragment {
     RadioGroup tipoFrequencia;
     EditText edtTxtSelectHoras;
     EditText editTextSeleconarHorario;
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
+    private EditText editText;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,16 @@ public class AddRemedio extends Fragment {
         anotacoesEditText = view.findViewById(R.id.editTxtAnotacoes);
         edtTxtSelectHoras = view.findViewById(R.id.editTextSeleconarHorario);
         editTextSeleconarHorario = view.findViewById(R.id.editTextSeleconarHorario);
+
+
+        int selecionado = tipoFrequencia.getCheckedRadioButtonId();
+        int tipoFrequencia = 0;
+        if (selecionado == R.id.rdbtnDiario)
+            tipoFrequencia = DIARIAMENTE;
+        else if (selecionado == R.id.rdbtnHoras)
+            tipoFrequencia = INTERVALO_HORA;
+        edtTxtSelectHoras.setVisibility(View.VISIBLE);
+
 
         //On listener dos botôes
         btnSalvar.setOnClickListener(view1 -> salvar());
