@@ -14,8 +14,7 @@ public class Remedio {
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
     public Remedio(){}
 
-    public Remedio(String id, String nome, String horaInicial, String anotacoes, String intervaloHoras, int tipoFrequencia) {
-        this.id = id;
+    public Remedio(String nome, String horaInicial, String anotacoes, String intervaloHoras, int tipoFrequencia) {
         this.nome = nome;
         this.horaInicial = horaInicial;
         this.anotacoes = anotacoes;

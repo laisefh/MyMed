@@ -84,8 +84,8 @@ public class RemedioViewModel extends ViewModel {
 
     }
 
-    public void insertRemedio(String id, String nome, String horaInicial, String intervaloHoras, String anotacoes, int tipoFrequencia){
-        Remedio novo = new Remedio(id, nome, horaInicial, intervaloHoras, anotacoes, tipoFrequencia);
+    public void insertRemedio(String nome, String horaInicial, String intervaloHoras, String anotacoes, int tipoFrequencia){
+        Remedio novo = new Remedio(nome, horaInicial, intervaloHoras, anotacoes, tipoFrequencia);
         listaRemediosRef.push().setValue(novo);
     }
 
@@ -96,9 +96,9 @@ public class RemedioViewModel extends ViewModel {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
-                    Log.d("MYMED2023", "Remedio removido: " + id);
+                    Log.d("MYMED2023", "Remedio removido: " );
                 else
-                    Log.d("MYMED2023", "Não foi possível remover o remedio: " + id);
+                    Log.d("MYMED2023", "Não foi possível remover o remedio: ");
             }
         });
     }

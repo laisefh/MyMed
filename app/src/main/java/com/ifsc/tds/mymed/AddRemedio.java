@@ -17,9 +17,12 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import com.ifsc.tds.mymed.remedio.RemedioViewModel;
 
 public class AddRemedio extends Fragment {
+
     static int DIARIAMENTE = 1;
     static int INTERVALO_HORA = 2;
 
