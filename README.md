@@ -8,14 +8,17 @@
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
-:small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
-
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
+:small_blue_diamond: [Como rodar os testes](#como-rodar-os-testes)
 
+:small_blue_diamond: [Casos de Uso](#casos-de-uso)
 
+:small_blue_diamond: [Tarefas em Aberto](#tarefas-em-aberto)
+
+:small_blue_diamond: [Desenvolvedores](#desenvolvedorescontribuintes-octocat)
 ## Descrição do projeto 
 
 <p align="justify">
