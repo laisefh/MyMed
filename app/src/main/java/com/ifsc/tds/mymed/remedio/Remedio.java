@@ -22,15 +22,6 @@ public class Remedio {
         this.tipoFrequencia = tipoFrequencia;
     }
 
-    public Remedio(String nome, String horaInicial, String anotacoes, String intervaloHoras, int tipoFrequencia) {
-        this.nome = nome;
-        this.horaInicial = horaInicial;
-        this.anotacoes = anotacoes;
-        this.intervaloHoras = intervaloHoras;
-        this.tipoFrequencia = tipoFrequencia;
-    }
-
-
     //NECESSÀRIO GET E SET
     public String getNome() {
         return nome;
