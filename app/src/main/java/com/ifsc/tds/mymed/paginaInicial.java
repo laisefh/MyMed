@@ -51,7 +51,6 @@ public class paginaInicial extends Fragment {
             }
         };
 
-
         remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
         lista = new ArrayList<Remedio>();
         remedioViewModel.getListaRemedios().observe(this, remedios -> {
