@@ -40,19 +40,23 @@ public class paginaInicial extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        lista = new ArrayList<Remedio>();
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = firebaseAuth -> {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user != null) {
                 Log.d("MYMED2023", "Usuário logado");
+                getRemedios();
             } else {
                 Log.d("MYMED2023", "Usuário signed_out");
                 Navigation.findNavController(getView()).navigate(R.id.action_paginaInicial_to_login);
             }
         };
+    }
 
+    public void getRemedios(){
         remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
-        lista = new ArrayList<Remedio>();
         remedioViewModel.getListaRemedios().observe(this, remedios -> {
             lista = remedios;
             Log.d("MYMED2023", "Lista atualizada: " + lista);

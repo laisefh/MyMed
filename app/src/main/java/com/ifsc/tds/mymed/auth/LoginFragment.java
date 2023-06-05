@@ -66,7 +66,7 @@ public class LoginFragment extends Fragment {
                     //Método assíncrono para lidar com a resposta da solicitação
                     .addOnCompleteListener(getActivity(),
                             task -> {
-                                if (!task.isSuccessful()) {
+                                if (task.isSuccessful()) {
                                     Log.d("MyMed2023", "Login Efetuado com sucesso!!!");
                                     goToHome();
                                 } else {
