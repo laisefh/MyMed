@@ -78,4 +78,3 @@ A aplicação pode ser utilizada para cadastrar usuários, medicações, escreve
 
 
 |DHARMA ANGELINA GOMEZ SANCHEZ | LAÍSE FERNANDA HOLOVATY | LETICIA MARIA ONOFRE |
-| :---: | :---: | :---: 
