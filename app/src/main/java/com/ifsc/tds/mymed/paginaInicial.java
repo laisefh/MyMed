@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.ifsc.tds.mymed.livro.Livro;
 import com.ifsc.tds.mymed.remedio.Remedio;
+import com.ifsc.tds.mymed.remedio.RemedioAdapter;
 import com.ifsc.tds.mymed.remedio.RemedioViewModel;
 
 import java.util.ArrayList;
@@ -35,6 +38,8 @@ public class paginaInicial extends Fragment {
 
     private RemedioViewModel remedioViewModel;
     List<Remedio> lista;
+
+    private RemedioAdapter remedioAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,9 @@ public class paginaInicial extends Fragment {
         remedioViewModel = new ViewModelProvider(this).get(RemedioViewModel.class);
         remedioViewModel.getListaRemedios().observe(this, remedios -> {
             lista = remedios;
+            //adaptadir.setLista(lista)
+            remedioAdapter.remedios = lista;
+            remedioAdapter.notifyDataSetChanged();
             Log.d("MYMED2023", "Lista atualizada: " + lista);
             int cont = 0;
             for(Remedio r: lista){
@@ -84,6 +92,12 @@ public class paginaInicial extends Fragment {
         btnAdd2.setOnClickListener(view1 -> adicionarMed2());
         btnConfig.setOnClickListener(view1 -> irConfiguracoes());
         btnTermo.setOnClickListener(view1 -> verTermos());
+
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+        remedioAdapter = new RemedioAdapter(lista);
+        recyclerView.setAdapter(remedioAdapter);
         return view;
     }
 
