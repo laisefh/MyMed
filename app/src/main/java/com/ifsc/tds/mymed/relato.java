@@ -2,7 +2,10 @@ package com.ifsc.tds.mymed;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -10,7 +13,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.ifsc.tds.mymed.Relato.Relato;
+import com.ifsc.tds.mymed.Relato.RelatoViewModel;
+import com.ifsc.tds.mymed.remedio.RemedioViewModel;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +38,10 @@ public class relato extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private EditText relatoEditText;
+    RelatoViewModel relatoViewModel;
+
 
     public relato() {
         // Required empty public constructor
@@ -57,6 +72,7 @@ public class relato extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        relatoViewModel = new ViewModelProvider(this).get(RelatoViewModel.class);
     }
 
     @Override
@@ -64,24 +80,57 @@ public class relato extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_relato, container, false);
+        relatoViewModel = new ViewModelProvider(this).get(RelatoViewModel.class);
+        Button salvarButton = view.findViewById(R.id.btnRelatoSalvar);
+        salvarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                salvarRelato();
+            }
+        });
 
         //botoes
-        Button btnSalvar = view.findViewById(R.id.btnRelatoSalvar);
         ImageButton btnAdd = view.findViewById(R.id.btnRelatoAdicionar);
         ImageButton btnHome = view.findViewById(R.id.btnRelatoHome);
         ImageButton btnConfig = view.findViewById(R.id.btnRelatoConfiguracoes);
         ImageButton btnTermo = view.findViewById(R.id.btnRelatoContrato);
+        relatoEditText = view.findViewById(R.id.editTxtRelato);
         //On listener dos botôes
-        btnSalvar.setOnClickListener(view1 -> salvar());
         btnAdd.setOnClickListener(view1 -> addMed());
         btnHome.setOnClickListener(view1 -> irParaHome());
         btnConfig.setOnClickListener(view1 -> irConfiguracoes());
         btnTermo.setOnClickListener(view1 -> verTermos());
 
+        relatoViewModel.getListaRelato().observe(getViewLifecycleOwner(), new Observer<List<Relato>>() {
+            @Override
+            public void onChanged(@Nullable List<Relato> listaRelato) {
+                if (!listaRelato.isEmpty()) {
+                    Relato relato = listaRelato.get(0);
+                    relatoEditText.setText(relato.getRelato());
+                }
+            }
+        });
+
         return view;
     }
-    void salvar() {
+    void salvarRelato() {
+        String relato = relatoEditText.getText().toString();
+
+        //Obter informação do usuário
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getUid();
+
+        relatoViewModel.insertRelato(uuid, relato);
+        //Volta para tela anterior
+        NavController nav = Navigation.findNavController(getView());
+
+
+
+
     }
+
+
+
     void irParaHome() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_relato_to_paginaInicial2);
