@@ -2,15 +2,16 @@ package com.ifsc.tds.mymed.usuario;
 
 import java.util.Date;
 
-public class usuario {
+public class Usuario {
     String id;
     String nome;
-    Date dataNascimento;
+    String dataNascimento;
     String email;
     String senha;
+    String relato;
 
     //NECESSÀRIO CONSTRUTOR PADRÂO EM BRANCO
-    public usuario(){}
+    public Usuario(){}
 
     //NECESSÀRIO GET E SET
     public String getNome() {
@@ -18,10 +19,6 @@ public class usuario {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public usuario(String nome) {
         this.nome = nome;
     }
 
@@ -33,11 +30,11 @@ public class usuario {
         this.id = id;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento){this.dataNascimento = dataNascimento;}
+    public void setDataNascimento(String dataNascimento){this.dataNascimento = dataNascimento;}
 
     public String getEmail() {
         return email;
@@ -50,4 +47,12 @@ public class usuario {
     }
 
     public void setSenha(String senha){this.senha = senha;}
+
+    public String getRelato() {
+        return relato;
+    }
+
+    public void setRelato(String relato) {
+        this.relato = relato;
+    }
 }
