@@ -14,4 +14,7 @@ public class UsuarioRepository {
     public void salvarUsuario(String userId, Usuario usuario) {
         databaseReference.child(userId).setValue(usuario);
     }
+    public void updateUsuario(String userId, Usuario usuario) {
+        databaseReference.child(userId).setValue(usuario);
+    }
 }

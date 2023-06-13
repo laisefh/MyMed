@@ -83,7 +83,6 @@ public class configuracoes extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_configuracoes, container, false);
         //botoes
-        Button btnSalvar = view.findViewById(R.id.btnConfigSalvar);
         ImageButton btnAnotacoes = view.findViewById(R.id.btnConfigAnotacoes);
         ImageButton btnAdd = view.findViewById(R.id.btnConfigAdicionar);
         ImageButton btnHome = view.findViewById(R.id.btnConfigHome);
@@ -95,7 +94,6 @@ public class configuracoes extends Fragment {
         EditText editMes = view.findViewById(R.id.editTextConfigMes);
         EditText editAno = view.findViewById(R.id.editTextConfigAno);
         //On listener dos botôes
-        btnSalvar.setOnClickListener(view1 -> salvar());
         btnAnotacoes.setOnClickListener(view1 -> verAnotacoes());
         btnHome.setOnClickListener(view1 -> irParaHome());
         btnAdd.setOnClickListener(view1 -> addMed());
@@ -108,7 +106,6 @@ public class configuracoes extends Fragment {
                 salvarConfiguracoes();
             }
         });
-
 
         usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
         usuarioViewModel.getUsuario().observe(getViewLifecycleOwner(), new Observer<Usuario>() {
@@ -128,12 +125,22 @@ public class configuracoes extends Fragment {
                 }
             }
         });
-
         return view;
     }
-    void salvar() {
+    void salvarConfiguracoes(){
+        String nome = editnome.getText().toString();
+        String email = editEmail.getText().toString();
+        int dia = Integer.parseInt(editDia.getText().toString());
+        int mes = Integer.parseInt(editMes.getText().toString());
+        int ano = Integer.parseInt(editAno.getText().toString());
+        LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
+        Log.d("MYMED2023", "Data Nascimento:" + dataNascimento);
+        usuarioViewModel.updateRelato(nome);
+        usuarioViewModel.updateRelato(email);
+        usuarioViewModel.updateRelato(dataNascimento.toString());
+//        relatoViewModel.insertRelato(uuid, relato);
+        //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
-        nav.navigate(R.id.action_configuracoes_to_paginaInicial2);
     }
 
     void irParaHome() {
@@ -155,20 +162,6 @@ public class configuracoes extends Fragment {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_configuracoes_to_termosDeUso);
     }
-    void salvarConfiguracoes(){
-        String nome = editnome.getText().toString();
-        String email = editEmail.getText().toString();
-        int dia = Integer.parseInt(editDia.getText().toString());
-        int mes = Integer.parseInt(editMes.getText().toString());
-        int ano = Integer.parseInt(editAno.getText().toString());
-        LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
-        Log.d("MYMED2023", "Data Nascimento:" + dataNascimento);
-        usuarioViewModel.updateRelato(nome);
-        usuarioViewModel.updateRelato(email);
-        usuarioViewModel.updateRelato(dataNascimento.toString());
-//        relatoViewModel.insertRelato(uuid, relato);
-        //Volta para tela anterior
-        NavController nav = Navigation.findNavController(getView());
-    }
+
 
 }

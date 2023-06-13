@@ -55,4 +55,5 @@ public class Usuario {
     public void setRelato(String relato) {
         this.relato = relato;
     }
+
 }

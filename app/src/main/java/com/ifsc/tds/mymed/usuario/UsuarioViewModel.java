@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.LocalDate;
+
 public class UsuarioViewModel extends ViewModel {
     private MutableLiveData<Usuario> usuario;
 
@@ -48,7 +50,7 @@ public class UsuarioViewModel extends ViewModel {
     }
 
 
-    public void updateRelato(String relato){
+    public void updateRelato(String relato) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String uuid = auth.getCurrentUser().getUid();
         DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child("relato");
@@ -59,4 +61,5 @@ public class UsuarioViewModel extends ViewModel {
                 Log.d("MYMED2023", "Não foi possível editar o relato");
         });
     }
+
 }

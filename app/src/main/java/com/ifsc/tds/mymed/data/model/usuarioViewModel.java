@@ -1,11 +1,17 @@
 package com.ifsc.tds.mymed.data.model;
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class usuarioViewModel extends ViewModel {
     private FirebaseAuth firebaseAuth;
     private UsuarioRepository usuarioRepository;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
     public usuarioViewModel() {
         // Inicializar o Firebase Auth e o repositório do usuário
@@ -28,6 +34,18 @@ public class usuarioViewModel extends ViewModel {
                         listener.onRegistroError(task.getException().getMessage());
                     }
                 });
+    }
+    public void updateUsuario(String nome, String email, String senha, String dataNascimento) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getCurrentUser().getUid();
+        DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child(nome);
+        relatoRef.setValue(nome, email).addOnCompleteListener(task -> {
+            if (task.isSuccessful())
+                Log.d("MYMED2023", "Relato editado ");
+            else
+                Log.d("MYMED2023", "Não foi possível editar o relato");
+        });
+
     }
 
     public interface OnRegistroCompleteListener {
