@@ -62,4 +62,39 @@ public class UsuarioViewModel extends ViewModel {
         });
     }
 
+    public void updateNome(String nome) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getCurrentUser().getUid();
+        DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child("nome");
+        relatoRef.setValue(nome).addOnCompleteListener(task -> {
+            if (task.isSuccessful())
+                Log.d("MYMED2023", "Relato editado ");
+            else
+                Log.d("MYMED2023", "Não foi possível editar o relato");
+        });
+    }
+
+    public void updateEmail(String email) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getCurrentUser().getUid();
+        DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child("email");
+        relatoRef.setValue(email).addOnCompleteListener(task -> {
+            if (task.isSuccessful())
+                Log.d("MYMED2023", "Relato editado ");
+            else
+                Log.d("MYMED2023", "Não foi possível editar o relato");
+        });
+    }
+
+    public void updateData(String toString) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uuid = auth.getCurrentUser().getUid();
+        DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child("dataNascimento");
+        relatoRef.setValue(toString).addOnCompleteListener(task -> {
+            if (task.isSuccessful())
+                Log.d("MYMED2023", "Relato editado ");
+            else
+                Log.d("MYMED2023", "Não foi possível editar o relato");
+        });
+    }
 }

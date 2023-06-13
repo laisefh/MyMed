@@ -111,7 +111,7 @@ public class paginaInicial extends Fragment {
         arguments.putString("REMEDIO", key);
         NavController nav = Navigation.findNavController(getView());
         //TODO MUDAR A NAVEGAÇÂO PORQUE NÂO EXISTE TRANSIÇÃO PARA A TELA EDITAR AINDA
-        nav.navigate(R.id.action_paginaInicial_to_login, arguments);
+        nav.navigate(R.id.action_paginaInicial2_to_addRemedio, arguments);
     }
 
 

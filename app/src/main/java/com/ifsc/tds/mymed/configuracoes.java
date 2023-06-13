@@ -129,10 +129,9 @@ public class configuracoes extends Fragment {
         int ano = Integer.parseInt(editAno.getText().toString());
         LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
         Log.d("MYMED2023", "Data Nascimento:" + dataNascimento);
-        usuarioViewModel.updateRelato(nome);
-        usuarioViewModel.updateRelato(email);
-        usuarioViewModel.updateRelato(dataNascimento.toString());
-//        relatoViewModel.insertRelato(uuid, relato);
+        usuarioViewModel.updateNome(nome);
+        usuarioViewModel.updateEmail(email);
+        usuarioViewModel.updateData(dataNascimento.toString());
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
         //nav.navigate(R.id.action_configuracoes_to_paginaInicial2);

@@ -35,18 +35,7 @@ public class usuarioViewModel extends ViewModel {
                     }
                 });
     }
-    public void updateUsuario(String nome, String email, String senha, String dataNascimento) {
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        String uuid = auth.getCurrentUser().getUid();
-        DatabaseReference relatoRef = database.getReference("usuarios").child(uuid).child(nome);
-        relatoRef.setValue(nome, email).addOnCompleteListener(task -> {
-            if (task.isSuccessful())
-                Log.d("MYMED2023", "Relato editado ");
-            else
-                Log.d("MYMED2023", "Não foi possível editar o relato");
-        });
 
-    }
 
     public interface OnRegistroCompleteListener {
         void onRegistroSuccess();
