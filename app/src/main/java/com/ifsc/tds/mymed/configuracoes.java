@@ -83,6 +83,7 @@ public class configuracoes extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_configuracoes, container, false);
         //botoes
+        Button btnSalvar = view.findViewById(R.id.btnConfigSalvar);
         ImageButton btnAnotacoes = view.findViewById(R.id.btnConfigAnotacoes);
         ImageButton btnAdd = view.findViewById(R.id.btnConfigAdicionar);
         ImageButton btnHome = view.findViewById(R.id.btnConfigHome);
@@ -94,18 +95,11 @@ public class configuracoes extends Fragment {
         EditText editMes = view.findViewById(R.id.editTextConfigMes);
         EditText editAno = view.findViewById(R.id.editTextConfigAno);
         //On listener dos botôes
+        btnSalvar.setOnClickListener(view1 -> salvar());
         btnAnotacoes.setOnClickListener(view1 -> verAnotacoes());
         btnHome.setOnClickListener(view1 -> irParaHome());
         btnAdd.setOnClickListener(view1 -> addMed());
         btnTermo.setOnClickListener(view1 -> verTermos());
-
-        Button salvarButton = view.findViewById(R.id.btnConfigSalvar);
-        salvarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                salvarConfiguracoes();
-            }
-        });
 
         usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
         usuarioViewModel.getUsuario().observe(getViewLifecycleOwner(), new Observer<Usuario>() {
@@ -127,7 +121,7 @@ public class configuracoes extends Fragment {
         });
         return view;
     }
-    void salvarConfiguracoes(){
+    void salvar() {
         String nome = editnome.getText().toString();
         String email = editEmail.getText().toString();
         int dia = Integer.parseInt(editDia.getText().toString());
@@ -141,6 +135,7 @@ public class configuracoes extends Fragment {
 //        relatoViewModel.insertRelato(uuid, relato);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
+        //nav.navigate(R.id.action_configuracoes_to_paginaInicial2);
     }
 
     void irParaHome() {
