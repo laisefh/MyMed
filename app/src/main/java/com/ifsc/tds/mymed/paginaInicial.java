@@ -96,10 +96,24 @@ public class paginaInicial extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
-        remedioAdapter = new RemedioAdapter(lista);
+        remedioAdapter = new RemedioAdapter(lista, new RemedioAdapter.RemedioClickListener() {
+            @Override
+            public void onClick(String remedioKey) {
+                onEditRemedio(remedioKey);
+            }
+        });
         recyclerView.setAdapter(remedioAdapter);
         return view;
     }
+
+    public void onEditRemedio(String key){
+        Bundle arguments = new Bundle();
+        arguments.putString("REMEDIO", key);
+        NavController nav = Navigation.findNavController(getView());
+        //TODO MUDAR A NAVEGAÇÂO PORQUE NÂO EXISTE TRANSIÇÃO PARA A TELA EDITAR AINDA
+        nav.navigate(R.id.action_paginaInicial_to_login, arguments);
+    }
+
 
     void adicionarMed() {
         NavController nav = Navigation.findNavController(getView());

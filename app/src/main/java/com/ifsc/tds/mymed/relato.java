@@ -17,11 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.ifsc.tds.mymed.Relato.Relato;
-import com.ifsc.tds.mymed.Relato.RelatoViewModel;
-import com.ifsc.tds.mymed.remedio.RemedioViewModel;
+import com.ifsc.tds.mymed.usuario.Usuario;
+import com.ifsc.tds.mymed.usuario.UsuarioViewModel;
 
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,8 +38,7 @@ public class relato extends Fragment {
     private String mParam2;
 
     private EditText relatoEditText;
-    RelatoViewModel relatoViewModel;
-
+    UsuarioViewModel usuarioViewModel;
 
     public relato() {
         // Required empty public constructor
@@ -72,7 +69,6 @@ public class relato extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        relatoViewModel = new ViewModelProvider(this).get(RelatoViewModel.class);
     }
 
     @Override
@@ -80,7 +76,6 @@ public class relato extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_relato, container, false);
-        relatoViewModel = new ViewModelProvider(this).get(RelatoViewModel.class);
         Button salvarButton = view.findViewById(R.id.btnRelatoSalvar);
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,12 +96,14 @@ public class relato extends Fragment {
         btnConfig.setOnClickListener(view1 -> irConfiguracoes());
         btnTermo.setOnClickListener(view1 -> verTermos());
 
-        relatoViewModel.getListaRelato().observe(getViewLifecycleOwner(), new Observer<List<Relato>>() {
+
+        usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
+        usuarioViewModel.getUsuario().observe(getViewLifecycleOwner(), new Observer<Usuario>() {
             @Override
-            public void onChanged(@Nullable List<Relato> listaRelato) {
-                if (!listaRelato.isEmpty()) {
-                    Relato relato = listaRelato.get(0);
-                    relatoEditText.setText(relato.getRelato());
+            public void onChanged(@Nullable Usuario usuario) {
+                if (usuario != null) {
+                    String relato = usuario.getRelato();
+                    relatoEditText.setText(relato);
                 }
             }
         });
@@ -116,11 +113,8 @@ public class relato extends Fragment {
     void salvarRelato() {
         String relato = relatoEditText.getText().toString();
 
-        //Obter informação do usuário
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        String uuid = auth.getUid();
-
-        relatoViewModel.insertRelato(uuid, relato);
+          usuarioViewModel.updateRelato(relato);
+//        relatoViewModel.insertRelato(uuid, relato);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
 

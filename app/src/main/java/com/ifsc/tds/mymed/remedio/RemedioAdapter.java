@@ -19,10 +19,14 @@ import com.ifsc.tds.mymed.R;
 import java.util.List;
 
 public class RemedioAdapter extends RecyclerView.Adapter<RemedioAdapter.RemedioViewHolder>{
+    public interface RemedioClickListener{
+        void onClick(String remedioKey);
+    }
+
     /**********************************************
      *      VIEW HOLDER DA CLASSE PESSOA          *
      **********************************************/
-    public static class RemedioViewHolder extends RecyclerView.ViewHolder {
+    public class RemedioViewHolder extends RecyclerView.ViewHolder {
         String key;
         TextView nomeMed;
         TextView anotacoes;
@@ -35,6 +39,12 @@ public class RemedioAdapter extends RecyclerView.Adapter<RemedioAdapter.RemedioV
             anotacoes = (TextView)itemView.findViewById(R.id.textView4);
             intervalo = (TextView)itemView.findViewById(R.id.textViewHorario);
             editar = (Button) itemView.findViewById(R.id.buttonEditarRemedio);
+            editar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onClick(key);
+                }
+            });
         }
 
         public void setRemedioId(String key) { this.key = key;}
@@ -45,8 +55,11 @@ public class RemedioAdapter extends RecyclerView.Adapter<RemedioAdapter.RemedioV
      **********************************************/
 
     public List<Remedio> remedios;
-    public RemedioAdapter(List<Remedio> remedios){
+    private final RemedioClickListener clickListener;
+
+    public RemedioAdapter(List<Remedio> remedios, RemedioClickListener clickListener){
         this.remedios = remedios;
+        this.clickListener = clickListener;
     }
 
     /**********************************************
@@ -65,7 +78,6 @@ public class RemedioAdapter extends RecyclerView.Adapter<RemedioAdapter.RemedioV
         viewHolder.nomeMed.setText(remedios.get(i).getNome());
         viewHolder.anotacoes.setText(remedios.get(i).getAnotacoes());
         viewHolder.intervalo.setText(remedios.get(i).getIntervaloHoras());
-
     }
 
     @Override
@@ -73,4 +85,3 @@ public class RemedioAdapter extends RecyclerView.Adapter<RemedioAdapter.RemedioV
         return remedios.size();
     }
 }
-
