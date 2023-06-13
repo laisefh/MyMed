@@ -162,7 +162,9 @@
         android:gravity="center"
         android:text="@string/senha"
         android:textColor="@color/azulmy"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:visibility="gone"
+        />
 
     <EditText
         android:id="@+id/editTextConfigSenha"
@@ -173,7 +175,8 @@
         android:ems="10"
         android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:visibility="visible" />
+        android:visibility="invisible"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnConfigSalvar"

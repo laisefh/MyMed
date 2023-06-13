@@ -28,7 +28,7 @@ anotações relacionadas a medicação e a saúde. O aplicativo é voltado para 
 por isso planejando uma interface de fácil acesso e entendimento, sem a intenção de haver
 propagandas, uma vez que o aplicativo não possui fins lucrativos. O usuário poderá registrar a
 medicação que está sendo utilizada. Poderá ser selecionado um horário, e também haverá um
-campo para escrever caso haja alterações após o uso da medicação.Descrição breve do projeto compondo um paragrafo ou dois. 
+campo para escrever caso haja alterações após o uso da medicação. 
 </p>
 
 ## Funcionalidades

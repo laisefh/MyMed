@@ -117,14 +117,7 @@ public class relato extends Fragment {
 //        relatoViewModel.insertRelato(uuid, relato);
         //Volta para tela anterior
         NavController nav = Navigation.findNavController(getView());
-
-
-
-
     }
-
-
-
     void irParaHome() {
         NavController nav = Navigation.findNavController(getView());
         nav.navigate(R.id.action_relato_to_paginaInicial2);
