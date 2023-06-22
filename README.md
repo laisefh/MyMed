@@ -65,7 +65,7 @@ Com o projeto aberto no Andorid Studio, clique em Run 'app', para o aplicativo r
 
 ## Como rodar os testes :pill:
 
-Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar medicamentos, fazer relatos.
+Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar medicamentos e fazer relatos.
 
 ## Casos de Uso :pill:
 
