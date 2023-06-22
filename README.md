@@ -1,8 +1,8 @@
-<h1>MyMed</h1>:pill:
+<h1>:pill: MyMed :pill: </h1>
 
-> Status do Projeto: :heavy_check_mark:  em desenvolvimento.
+> Status do Projeto: :clock1:  em desenvolvimento.
 
-### Tópicos 
+### Tópicos :pill:
 
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
@@ -19,7 +19,7 @@
 :small_blue_diamond: [Tarefas em Aberto](#tarefas-em-aberto)
 
 :small_blue_diamond: [Desenvolvedores](#desenvolvedorescontribuintes-octocat)
-## Descrição do projeto 
+## Descrição do projeto  :pill:
 
 <p align="justify">
   O projeto MyMed é um aplicativo que visa lembrar os usuários, principalmente
@@ -28,10 +28,10 @@ anotações relacionadas a medicação e a saúde. O aplicativo é voltado para 
 por isso planejando uma interface de fácil acesso e entendimento, sem a intenção de haver
 propagandas, uma vez que o aplicativo não possui fins lucrativos. O usuário poderá registrar a
 medicação que está sendo utilizada. Poderá ser selecionado um horário, e também haverá um
-campo para escrever caso haja alterações após o uso da medicação. 
+campo para escrever caso haja alterações após o uso da medicação. :older_woman: :older_man:
 </p>
 
-## Funcionalidades
+## Funcionalidades :alarm_clock:
 
 :heavy_check_mark: O sistema deve permitir ao usuário realizar seu cadastro no sistema;
 
@@ -55,7 +55,7 @@ campo para escrever caso haja alterações após o uso da medicação.
 
 :heavy_check_mark: O sistema deve mostrar os termos de uso ao usuário;
 
-## Pré-requisitos
+## Pré-requisitos :pill:
 
 :warning: Android 6.0 ou versão superior, Android Studio, emulador API 26+;
 
@@ -63,15 +63,15 @@ campo para escrever caso haja alterações após o uso da medicação.
 
 Com o projeto aberto no Andorid Studio, clique em Run 'app', para o aplicativo rodar no emulador do Android Studio. Também é possível conectar um celular com o cabo no computador para rodar o aplicativo, para isso é necessário ativar a opção de desenvolvedor e concordar com a depuração USB.
 
-## Como rodar os testes
+## Como rodar os testes :pill:
 
 Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar medicamentos, fazer relatos.
 
-## Casos de Uso
+## Casos de Uso :pill:
 
 A aplicação pode ser utilizada para cadastrar usuários, medicações, escrever relatos e fazer anotações.
 
-## Tarefas em aberto
+## Tarefas em aberto :pill:
 
 :memo: Selecionar Dias da semana específicos para lembrete da medicação;
 
