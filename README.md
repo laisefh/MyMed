@@ -57,7 +57,7 @@ campo para escrever caso haja alterações após o uso da medicação.
 
 ## Pré-requisitos
 
-:warning: Android 6.0 ou versão superior, Android Studio;
+:warning: Android 6.0 ou versão superior, Android Studio, emulador API 26+;
 
 ## Como rodar a aplicação :arrow_forward:
 
@@ -65,15 +65,18 @@ Com o projeto aberto no Andorid Studio, clique em Run 'app', para o aplicativo r
 
 ## Como rodar os testes
 
-Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar medicamentos, fazer relatos e esperar pelo lembrete da medicação no horário correto.
+Para rodar os testes é necessário fazer um cadastro, fazer o login, cadastrar medicamentos, fazer relatos.
 
 ## Casos de Uso
 
-A aplicação pode ser utilizada para cadastrar usuários, medicações, escrever relatos, fazer anotações, e enviar notificações.
+A aplicação pode ser utilizada para cadastrar usuários, medicações, escrever relatos e fazer anotações.
 
 ## Tarefas em aberto
 
 :memo: Selecionar Dias da semana específicos para lembrete da medicação.
+:memo: Enviar notificações.
+:memo: Editar medicações.
+:memo: Editar informações do usuário.
 ## Desenvolvedores/Contribuintes :octocat:
 
 
