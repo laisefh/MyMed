@@ -73,10 +73,10 @@ A aplicação pode ser utilizada para cadastrar usuários, medicações, escreve
 
 ## Tarefas em aberto
 
-:memo: Selecionar Dias da semana específicos para lembrete da medicação.
-:memo: Enviar notificações.
-:memo: Editar medicações.
-:memo: Editar informações do usuário.
+:memo: Selecionar Dias da semana específicos para lembrete da medicação;
+:memo: Enviar notificações;
+:memo: Editar medicações;
+:memo: Editar informações do usuário;
 ## Desenvolvedores/Contribuintes :octocat:
 
 
