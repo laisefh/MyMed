@@ -1,4 +1,4 @@
-<h1>MyMed</h1> 
+<h1>MyMed</h1>:pill:
 
 > Status do Projeto: :heavy_check_mark:  em desenvolvimento.
 
